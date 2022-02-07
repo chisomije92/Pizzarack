@@ -24,6 +24,7 @@
 .item:last-child {
   justify-content: flex-end;
 }
+
 .callButton {
   border-radius: 50px;
   background-color: white;
