@@ -37,12 +37,7 @@ const NavBar = () => {
       </nav>
       <div className={classes.item}>
         <div className={classes.cart}>
-          <Image
-            src="/images/cart.svg"
-            alt="pizzaracks logo"
-            width="30px"
-            height="30px"
-          />
+          <Image src="/images/cart.svg" alt="cart" width="30px" height="30px" />
           <div className={classes.counter}>2</div>
         </div>
       </div>
