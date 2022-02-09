@@ -14,9 +14,6 @@ const PizzaList = () => {
         <PizzaCard />
         <PizzaCard />
         <PizzaCard />
-        {/* <PizzaCard />
-        <PizzaCard />
-        <PizzaCard /> */}
       </div>
     </section>
   );
