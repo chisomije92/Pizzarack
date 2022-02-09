@@ -41,13 +41,13 @@ const Featured = () => {
       >
         {images.map((img, i) => (
           <div className={classes.imageContainer} key={i}>
-            <div className={classes.contentContainer}>
+            {/* <div className={classes.contentContainer}>
               <h2>Hot & Spicy As you like it!</h2>
               <h4>
                 Get a whooping 10% off on early morning orders between 7 - 10am
               </h4>
               <h3>Order now!!!</h3>
-            </div>
+            </div> */}
             <Image
               src={img}
               alt="Pizza 1"

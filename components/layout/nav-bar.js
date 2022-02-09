@@ -13,8 +13,8 @@ const NavBar = () => {
           />
         </div>
         <div className={classes.texts}>
-          <div className={classes.text}>MAKE YOUR ORDER</div>
-          <div className={classes.text}>080-PIZZARACKS</div>
+          <div className={classes.text}>ORDER NOW</div>
+          <div className={classes.text}>+234-PIZZARACKS</div>
         </div>
       </div>
       <nav className={classes.item}>
