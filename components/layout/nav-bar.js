@@ -25,7 +25,7 @@ const NavBar = () => {
           <li className={classes.listItem}>Products</li>
           <li className={classes.listItem}>Menu</li>
           <Image
-            src="/images/logo.svg"
+            src="/images/logo.png"
             alt="pizzaracks logo"
             width="160px"
             height="97px"

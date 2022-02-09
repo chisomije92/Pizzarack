@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Featured from "../components/featured";
+import PizzaList from "../components/pizza-list";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
         <link rel="icon" href="/pizza_snack_icon.svg" />
       </Head>
       <Featured />
+      <PizzaList />
     </div>
   );
 }

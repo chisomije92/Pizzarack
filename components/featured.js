@@ -20,7 +20,7 @@ const Featured = () => {
   ];
 
   return (
-    <div className={classes.container}>
+    <section className={classes.container}>
       <div
         className={classes.arrowContainer}
         style={{ left: 0 }}
@@ -62,7 +62,7 @@ const Featured = () => {
           height="50"
         />
       </div>
-    </div>
+    </section>
   );
 };
 
