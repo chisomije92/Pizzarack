@@ -5,17 +5,11 @@ import { useState } from "react";
 const Featured = () => {
   const [index, setIndex] = useState(0);
 
-  const changeImageHandler = (direction) => {
-    // if (dir === "left") {
-    //   setIndex(index !== 0 ? index - 1 : 2);
-    // }
-    // if (dir === "right") {
-    //   setIndex(index !== 2 ? index + 1 : 0);
-    // }
-    if (direction === "l") {
+  const changeImageHandler = (dir) => {
+    if (dir === "left") {
       setIndex(index !== 0 ? index - 1 : 2);
     }
-    if (direction === "r") {
+    if (dir === "right") {
       setIndex(index !== 2 ? index + 1 : 0);
     }
   };
@@ -30,9 +24,14 @@ const Featured = () => {
       <div
         className={classes.arrowContainer}
         style={{ left: 0 }}
-        onClick={() => changeImageHandler("l")}
+        onClick={changeImageHandler.bind(null, "left")}
       >
-        <Image src="/images/arrowLeft.png" alt="previous_arrow" layout="fill" />
+        <Image
+          src="/images/arrowLeft.png"
+          alt="previous_arrow"
+          width="50"
+          height="50"
+        />
       </div>
 
       <div
@@ -41,30 +40,27 @@ const Featured = () => {
       >
         {images.map((img, i) => (
           <div className={classes.imageContainer} key={i}>
-            {/* <div className={classes.contentContainer}>
-              <h2>Hot & Spicy As you like it!</h2>
-              <h4>
-                Get a whooping 10% off on early morning orders between 7 - 10am
-              </h4>
-              <h3>Order now!!!</h3>
-            </div> */}
             <Image
               src={img}
-              alt="Pizza 1"
-              //   width="530"
-              //   height="545"
+              alt={`photo of featured pizza${i}`}
               layout="fill"
               objectFit="contain"
-            />{" "}
+              priority
+            />
           </div>
         ))}
       </div>
       <div
         className={classes.arrowContainer}
         style={{ right: 0 }}
-        onClick={() => changeImageHandler("r")}
+        onClick={changeImageHandler.bind(null, "right")}
       >
-        <Image src="/images/arrowRight.png" alt="next_arrow" layout="fill" />
+        <Image
+          src="/images/arrowRight.png"
+          alt="next_arrow"
+          width="50"
+          height="50"
+        />
       </div>
     </div>
   );

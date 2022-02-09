@@ -8,8 +8,10 @@ const NavBar = () => {
           <Image
             src="/images/desktop_phone.svg"
             alt="telephone"
-            width="32"
-            height="32"
+            width="42"
+            height="42"
+            layout="responsive"
+            objectFit="cover"
           />
         </div>
         <div className={classes.texts}>
