@@ -3,7 +3,7 @@ import Image from "next/image";
 const Footer = () => {
   return (
     <footer className={classes.footer}>
-      {/* <div className={classes.item}>
+      <div className={classes.item}>
         <Image
           src="/images/background-image.png"
           alt="background photo"
@@ -12,7 +12,7 @@ const Footer = () => {
           layout="fill"
           objectFit="cover"
         />
-      </div> */}
+      </div>
       <div className={classes.item}>
         <div className={classes.card}>
           <h2 className={classes.motto}>
