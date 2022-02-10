@@ -1,4 +1,5 @@
 import Head from "next/head";
+
 import Featured from "../components/featured";
 import PizzaList from "../components/pizza-list";
 
