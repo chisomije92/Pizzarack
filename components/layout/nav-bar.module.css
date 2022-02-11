@@ -24,8 +24,25 @@
   flex: 3;
 }
 
-.item:last-child {
+.item:nth-of-type(2) {
   justify-content: flex-end;
+  flex: 1;
+}
+
+.item:last-child {
+  display: none;
+  flex: 1;
+}
+
+.itemMobile {
+  display: none;
+}
+
+.list {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  list-style: none;
 }
 
 .callButton {
@@ -75,7 +92,48 @@
     display: none;
   }
 
+  .itemMobile {
+    display: flex;
+    position: absolute;
+    padding-top: 20px;
+    /* height: 114vw; */
+
+    left: 0;
+    top: 0;
+    right: 0;
+    /* bottom: -296px; */
+    background-color: hsla(0, 4%, 14%, 0.911);
+
+    z-index: 978;
+  }
   .item:nth-child(1) {
     flex: 3;
+  }
+
+  .item:last-child {
+    display: flex;
+
+    justify-content: flex-end;
+    margin-right: -45px;
+    margin-top: -50px;
+    position: relative;
+    z-index: 1000;
+  }
+
+  .listMobile {
+    width: 100%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 2px solid rgb(156, 127, 238);
+    transform: translateY(20px);
+  }
+
+  .menuIcon {
+    /* transform: translate(-293px, -32px); */
+
+    /* position: relative;
+    left: -270px; */
   }
 }

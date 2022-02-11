@@ -1,20 +1,81 @@
 import Image from "next/image";
 import classes from "./nav-list.module.css";
-const NavList = () => {
+import { motion, AnimatePresence } from "framer-motion";
+const NavList = (props) => {
+  const animateFrom = { opacity: 0, y: -40 };
+  const animateTo = { opacity: 1, y: 0 };
+
   return (
-    <ul className={classes.list}>
-      <li className={classes.listItem}>Homepage</li>
-      <li className={classes.listItem}>Products</li>
-      <li className={classes.listItem}>Menu</li>
-      <Image
-        src="/images/logo.png"
-        alt="pizzaracks logo"
-        width="160px"
-        height="97px"
-      />
-      <li className={classes.listItem}>Events</li>
-      <li className={classes.listItem}>Blog</li>
-      <li className={classes.listItem}>Contact</li>
+    <ul className={props.className}>
+      <motion.li
+        initial={animateFrom}
+        animate={animateTo}
+        transition={{ delay: 0.05 }}
+        exit={animateFrom}
+        className={classes.listItem}
+        onClick={props.onClick}
+      >
+        Homepage
+      </motion.li>
+
+      <motion.li
+        initial={animateFrom}
+        animate={animateTo}
+        transition={{ delay: 0.1 }}
+        exit={animateFrom}
+        className={classes.listItem}
+        onClick={props.onClick}
+      >
+        Products
+      </motion.li>
+      <motion.li
+        initial={animateFrom}
+        animate={animateTo}
+        exit={animateFrom}
+        transition={{ delay: 0.15 }}
+        className={classes.listItem}
+        onClick={props.onClick}
+      >
+        Menu
+      </motion.li>
+      {props.showImage && (
+        <Image
+          src="/images/logo.png"
+          alt="pizzaracks logo"
+          width="160px"
+          height="97px"
+        />
+      )}
+      <motion.li
+        initial={animateFrom}
+        animate={animateTo}
+        exit={animateFrom}
+        transition={{ delay: 0.2 }}
+        className={classes.listItem}
+        onClick={props.onClick}
+      >
+        Events
+      </motion.li>
+      <motion.li
+        initial={animateFrom}
+        animate={animateTo}
+        exit={animateFrom}
+        transition={{ delay: 0.25 }}
+        className={classes.listItem}
+        onClick={props.onClick}
+      >
+        Blog
+      </motion.li>
+      <motion.li
+        initial={animateFrom}
+        animate={animateTo}
+        exit={animateFrom}
+        transition={{ delay: 0.3 }}
+        className={classes.listItem}
+        onClick={props.onClick}
+      >
+        Contact
+      </motion.li>
     </ul>
   );
 };

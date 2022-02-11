@@ -47,7 +47,6 @@ const Featured = () => {
               objectFit="contain"
               priority
             />
-            {/* <span>hello</span> */}
           </div>
         ))}
       </div>
