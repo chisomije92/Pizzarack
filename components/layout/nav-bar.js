@@ -1,5 +1,6 @@
 import classes from "./nav-bar.module.css";
 import Image from "next/image";
+import NavList from "./nav-list";
 const NavBar = () => {
   return (
     <div className={classes.container}>
@@ -20,20 +21,7 @@ const NavBar = () => {
         </div>
       </div>
       <nav className={classes.item}>
-        <ul className={classes.list}>
-          <li className={classes.listItem}>Homepage</li>
-          <li className={classes.listItem}>Products</li>
-          <li className={classes.listItem}>Menu</li>
-          <Image
-            src="/images/logo.png"
-            alt="pizzaracks logo"
-            width="160px"
-            height="97px"
-          />
-          <li className={classes.listItem}>Events</li>
-          <li className={classes.listItem}>Blog</li>
-          <li className={classes.listItem}>Contact</li>
-        </ul>
+        <NavList />
       </nav>
       <div className={classes.item}>
         <div className={classes.cart}>
