@@ -123,7 +123,7 @@
   }
 
   .done,
-  .undone,
+  .notDone,
   .inProgress {
     margin-bottom: 20px;
   }
