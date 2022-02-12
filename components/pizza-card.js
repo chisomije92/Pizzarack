@@ -6,7 +6,7 @@ const PizzaCard = () => {
     <div className={classes.container}>
       <div className={classes.imageContainer}>
         <Image
-          src="/images/pizza-select.png"
+          src="/images/pizza_select.png"
           alt=""
           width="12300"
           height="10000"

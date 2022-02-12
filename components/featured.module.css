@@ -1,6 +1,5 @@
 .container {
   height: calc(100vh - 100px);
-
   background-color: rgb(16, 13, 24);
   overflow: hidden;
   position: relative;
@@ -33,25 +32,5 @@
 @media screen and (max-width: 480px) {
   .container {
     height: 50vh;
-    /* width: 150vw; */
   }
-  /* .imageContainer {
-    width: 200vw;
-  } */
-  /* .imageContainer::before {
-    content: "  ";
-    position: absolute;
-    background-color: red;
-    color: white;
-    font-size: 99px;
-    display: inline-block;
-    height: 1200%;
-  } */
-
-  /* .imageContainer span {
-    width: 1500px;
-    display: inline-block;
-    background-color: red;
-    position: relative;
-  } */
 }
