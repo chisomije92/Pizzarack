@@ -7,7 +7,40 @@
 
 .listItem {
   margin: 20px;
+  font-size: 1.2rem;
   font-weight: 500;
   list-style: none;
   cursor: pointer;
+}
+
+@media screen and (max-width: 899px) {
+  .listItem {
+    margin: 0 12px;
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .listItem {
+    margin: 0 8px;
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .listItem {
+    margin: 5px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .listItem {
+    margin: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .listItem {
+    margin: 20px;
+  }
 }

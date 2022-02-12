@@ -30,8 +30,8 @@ const NavBar = () => {
   return (
     <header className={classes.container}>
       <div className={classes.item}>
-        <div className={classes.callButton}>
-          <Image
+        {/*<div className={classes.callButton}>
+           <Image
             src="/images/desktop_phone.svg"
             alt="telephone"
             width="42"
@@ -39,11 +39,20 @@ const NavBar = () => {
             layout="responsive"
             objectFit="cover"
           />
+        </div> */}
+        <div>
+          <Image
+            src="/images/logo.png"
+            alt="pizzaracks logo"
+            width="110px"
+            height="110px"
+            objectFit="contain"
+          />
         </div>
-        <div className={classes.texts}>
+        {/* <div className={classes.texts}>
           <div className={classes.text}>ORDER NOW</div>
-          <div className={classes.text}>+234-PIZZARACKS</div>
-        </div>
+          <div className={classes.text}>012 100 012</div>
+        </div> */}
       </div>
       <nav className={classes.item}>
         <NavList className={classes.list} showImage />

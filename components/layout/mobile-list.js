@@ -38,14 +38,7 @@ const MobileList = (props) => {
       >
         Menu
       </motion.li>
-      {props.showImage && (
-        <Image
-          src="/images/logo.png"
-          alt="pizzaracks logo"
-          width="160px"
-          height="97px"
-        />
-      )}
+
       <motion.li
         initial={animateFrom}
         animate={animateTo}
