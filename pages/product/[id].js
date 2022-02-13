@@ -8,8 +8,8 @@ const Product = () => {
     id: 1,
     img: "/images/pizza_select.png",
     name: "CAMPAGNOLA",
-    price: [19.9, 23.9, 27.9],
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis arcu purus, rhoncus fringilla vestibulum vel, dignissim vel ante. Nulla facilisi. Nullam a urna sit amet tellus pellentesque egestas in in ante.",
+    price: [5500, 6500, 7500],
+    desc: "Authentic delicious crumbled Italian sausage, red and green peppers,red onions, plum tomato sauce and melted mozzarella cheese.",
   };
 
   return (
@@ -26,7 +26,7 @@ const Product = () => {
       </div>
       <div className={classes.right}>
         <h1 className={classes.title}>{pizza.name}</h1>
-        <span className={classes.price}>{`$${pizza.price[size]}`}</span>
+        <span className={classes.price}>{`₦${pizza.price[size]}`}</span>
         <p className={classes.desc}>{pizza.desc}</p>
         <h3 className={classes.choose}>Choose the size</h3>
         <div className={classes.sizes}>

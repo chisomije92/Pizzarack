@@ -28,10 +28,10 @@ const Order = () => {
                 <span className={classes.name}>John Doe</span>
               </td>
               <td>
-                <span className={classes.address}>Elton st. 212-33 LA</span>
+                <span className={classes.address}> 43 King st. Lagos</span>
               </td>
               <td>
-                <span className={classes.total}>$79.80</span>
+                <span className={classes.total}> ₦22000</span>
               </td>
             </tr>
           </table>
@@ -95,13 +95,13 @@ const Order = () => {
         <div className={classes.wrapper}>
           <h2 className={classes.title}>CART TOTAL</h2>
           <div className={classes.totalText}>
-            <b className={classes.totalTextTitle}>Subtotal:</b>$79.60
+            <b className={classes.totalTextTitle}>Subtotal:</b> ₦22000
           </div>
           <div className={classes.totalText}>
             <b className={classes.totalTextTitle}>Discount:</b>$0.00
           </div>
           <div className={classes.totalText}>
-            <b className={classes.totalTextTitle}>Total:</b>$79.60
+            <b className={classes.totalTextTitle}>Total:</b> ₦22000
           </div>
           <button disabled className={classes.button}>
             PAID!

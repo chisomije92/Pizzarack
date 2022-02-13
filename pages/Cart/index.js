@@ -33,13 +33,13 @@ const Cart = () => {
               </span>
             </td>
             <td>
-              <span className={classes.price}>$19.90</span>
+              <span className={classes.price}> ₦5500</span>
             </td>
             <td>
               <span className={classes.quantity}>2</span>
             </td>
             <td>
-              <span className={classes.total}>$39.80</span>
+              <span className={classes.total}> ₦11000</span>
             </td>
           </tr>
           <tr className={classes.tr}>
@@ -62,13 +62,13 @@ const Cart = () => {
               </span>
             </td>
             <td>
-              <span className={classes.price}>$19.90</span>
+              <span className={classes.price}> ₦5500</span>
             </td>
             <td>
               <span className={classes.quantity}>2</span>
             </td>
             <td>
-              <span className={classes.total}>$39.80</span>
+              <span className={classes.total}> ₦11000</span>
             </td>
           </tr>
         </table>
@@ -77,13 +77,13 @@ const Cart = () => {
         <div className={classes.wrapper}>
           <h2 className={classes.title}>CART TOTAL</h2>
           <div className={classes.totalText}>
-            <b className={classes.totalTextTitle}>Subtotal:</b>$79.60
+            <b className={classes.totalTextTitle}>Subtotal:</b> ₦22000
           </div>
           <div className={classes.totalText}>
-            <b className={classes.totalTextTitle}>Discount:</b>$0.00
+            <b className={classes.totalTextTitle}>Discount:</b> ₦0.00
           </div>
           <div className={classes.totalText}>
-            <b className={classes.totalTextTitle}>Total:</b>$79.60
+            <b className={classes.totalTextTitle}>Total:</b> ₦22000
           </div>
           <button className={classes.button}>CHECKOUT NOW!</button>
         </div>
