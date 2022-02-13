@@ -50,17 +50,24 @@
 }
 
 .button {
-  height: 30px;
+  height: 40px;
   color: #dd3939;
   font-weight: bold;
   cursor: pointer;
   margin-top: 20px;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 833px) {
+  .left {
+    flex: 1;
+    margin-left: -60px;
+  }
+}
+
+@media screen and (max-width: 780px) {
   .container {
     flex-direction: column;
-    padding: 20px;
+    /* padding: 20px; */
   }
 
   .table {
@@ -68,6 +75,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-left: 30px;
   }
 
   .trTitle {
@@ -83,8 +91,8 @@
   }
 
   .imageContainer {
-    width: 35vw;
-    height: 35vw;
+    width: 45vw;
+    height: 45vw;
   }
 
   .name,
@@ -110,8 +118,34 @@
     content: "Total: ";
     font-weight: 500;
   }
+  .right {
+    display: flex;
+    justify-content: center;
+  }
+  .wrapper {
+    width: 80%;
+  }
+
+  .button {
+    width: max-content;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .name,
+  .total {
+    font-size: 18px;
+  }
+
+  .extras,
+  .price,
+  .quantity {
+    font-size: 17px;
+  }
 
   .wrapper {
-    width: 100%;
+    width: max-content;
   }
 }

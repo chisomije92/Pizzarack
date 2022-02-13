@@ -18,7 +18,7 @@
 
 .imageContainer {
   width: 80%;
-  height: 80%;
+  height: 60%;
 }
 
 .price {
@@ -80,7 +80,7 @@
 }
 .quantity {
   width: 50px;
-  height: 20px;
+  height: 25px;
 }
 
 .button {
@@ -92,7 +92,7 @@
   cursor: pointer;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 750px) {
   .container {
     height: auto;
     text-align: center;
@@ -132,5 +132,14 @@
   .button {
     height: 50px;
     padding: 10px 20px;
+  }
+}
+
+@media screen and (min-height: 1000px) {
+  .container {
+    height: 60vh;
+  }
+  .left {
+    height: 60%;
   }
 }

@@ -7,8 +7,6 @@ const Footer = () => {
         <Image
           src="/images/background-image.png"
           alt="background photo"
-          // width="300px"
-          // height="300px"
           layout="fill"
           objectFit="cover"
         />
@@ -16,7 +14,7 @@ const Footer = () => {
       <div className={classes.item}>
         <div className={classes.card}>
           <h2 className={classes.motto}>
-            PIZZARACK PIZZAS - MADE JUST FOR YOU
+            PIZZA RACK PIZZAS - MADE JUST FOR YOU
           </h2>
         </div>
         <div className={classes.card}>

@@ -19,7 +19,8 @@
 
 .card {
   flex: 1;
-  padding: 0 20px;
+  /* padding: 0 20px; */
+  padding-right: 14px;
 }
 
 .title {
@@ -44,6 +45,10 @@
 
   .item {
     flex-direction: column;
+  }
+
+  .item:last-child {
+    padding: 0;
   }
 
   .title {
