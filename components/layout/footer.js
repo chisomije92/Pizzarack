@@ -9,6 +9,7 @@ const Footer = () => {
           alt="background photo"
           layout="fill"
           objectFit="cover"
+          priority
         />
       </div>
       <div className={classes.item}>

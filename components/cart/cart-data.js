@@ -5,72 +5,76 @@ const CartData = () => {
     <div className={classes.container}>
       <div className={classes.left}>
         <table className={classes.table}>
-          <tr className={classes.trTitle}>
-            <th>Product</th>
-            <th>Name</th>
-            <th>Extras</th>
-            <th>Price</th>
-            <th>Quantity</th>
-            <th>Total</th>
-          </tr>
-          <tr className={classes.tr}>
-            <td>
-              <div className={classes.imageContainer}>
-                <Image
-                  src="/images/pizza_select.png"
-                  layout="fill"
-                  objectFit="cover"
-                  alt="pizza"
-                />
-              </div>
-            </td>
-            <td>
-              <span className={classes.name}>CORALZO</span>
-            </td>
-            <td>
-              <span className={classes.extras}>
-                Double ingredient, spicy sauce
-              </span>
-            </td>
-            <td>
-              <span className={classes.price}> ₦5500</span>
-            </td>
-            <td>
-              <span className={classes.quantity}>2</span>
-            </td>
-            <td>
-              <span className={classes.total}> ₦11000</span>
-            </td>
-          </tr>
-          <tr className={classes.tr}>
-            <td>
-              <div className={classes.imageContainer}>
-                <Image
-                  src="/images/pizza_select.png"
-                  layout="fill"
-                  objectFit="cover"
-                  alt="pizza"
-                />
-              </div>
-            </td>
-            <td>
-              <span className={classes.name}>CORALZO</span>
-            </td>
-            <td>
-              <span className={classes.extras}>
-                Double ingredient, spicy sauce
-              </span>
-            </td>
-            <td>
-              <span className={classes.price}> ₦5500</span>
-            </td>
-            <td>
-              <span className={classes.quantity}>2</span>
-            </td>
-            <td>
-              <span className={classes.total}> ₦11000</span>
-            </td>
-          </tr>
+          <thead>
+            <tr className={classes.trTitle}>
+              <th>Product</th>
+              <th>Name</th>
+              <th>Extras</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Total</th>
+            </tr>{" "}
+          </thead>
+          <tbody>
+            <tr className={classes.tr}>
+              <td>
+                <div className={classes.imageContainer}>
+                  <Image
+                    src="/images/pizza_select.png"
+                    layout="fill"
+                    objectFit="cover"
+                    alt="pizza"
+                  />
+                </div>
+              </td>
+              <td>
+                <span className={classes.name}>CORALZO</span>
+              </td>
+              <td>
+                <span className={classes.extras}>
+                  Double ingredient, spicy sauce
+                </span>
+              </td>
+              <td>
+                <span className={classes.price}> ₦5500</span>
+              </td>
+              <td>
+                <span className={classes.quantity}>2</span>
+              </td>
+              <td>
+                <span className={classes.total}> ₦11000</span>
+              </td>
+            </tr>
+            <tr className={classes.tr}>
+              <td>
+                <div className={classes.imageContainer}>
+                  <Image
+                    src="/images/pizza_select.png"
+                    layout="fill"
+                    objectFit="cover"
+                    alt="pizza"
+                  />
+                </div>
+              </td>
+              <td>
+                <span className={classes.name}>CORALZO</span>
+              </td>
+              <td>
+                <span className={classes.extras}>
+                  Double ingredient, spicy sauce
+                </span>
+              </td>
+              <td>
+                <span className={classes.price}> ₦5500</span>
+              </td>
+              <td>
+                <span className={classes.quantity}>2</span>
+              </td>
+              <td>
+                <span className={classes.total}> ₦11000</span>
+              </td>
+            </tr>
+          </tbody>
         </table>
       </div>
       <div className={classes.right}>
