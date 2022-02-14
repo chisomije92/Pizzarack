@@ -21,6 +21,7 @@ const ProductItem = () => {
             objectFit="contain"
             layout="fill"
             alt="pizza image"
+            priority
           />
         </div>
       </div>

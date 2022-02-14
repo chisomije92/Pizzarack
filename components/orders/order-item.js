@@ -14,26 +14,30 @@ const OrderItem = () => {
       <div className={classes.left}>
         <div className={classes.row}>
           <table className={classes.table}>
-            <tr className={classes.trTitle}>
-              <th>Order ID</th>
-              <th>Customer</th>
-              <th>Address</th>
-              <th>Total</th>
-            </tr>
-            <tr className={classes.tr}>
-              <td>
-                <span className={classes.id}>129837819237</span>
-              </td>
-              <td>
-                <span className={classes.name}>John Doe</span>
-              </td>
-              <td>
-                <span className={classes.address}> 43 King st. Lagos</span>
-              </td>
-              <td>
-                <span className={classes.total}> ₦22000</span>
-              </td>
-            </tr>
+            <thead>
+              <tr className={classes.trTitle}>
+                <th>Order ID</th>
+                <th>Customer</th>
+                <th>Address</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className={classes.tr}>
+                <td>
+                  <span className={classes.id}>129837819237</span>
+                </td>
+                <td>
+                  <span className={classes.name}>John Doe</span>
+                </td>
+                <td>
+                  <span className={classes.address}> 43 King st. Lagos</span>
+                </td>
+                <td>
+                  <span className={classes.total}> ₦22000</span>
+                </td>
+              </tr>
+            </tbody>
           </table>
         </div>
         <div className={classes.row}>
