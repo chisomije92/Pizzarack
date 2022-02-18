@@ -49,7 +49,7 @@ const CartData = () => {
               <td>
                 <div className={classes.imageContainer}>
                   <Image
-                    src="/images/pizza_select.png"
+                    src="/images/pizza.png"
                     layout="fill"
                     objectFit="cover"
                     alt="pizza"

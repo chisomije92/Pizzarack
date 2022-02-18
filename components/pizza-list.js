@@ -1,7 +1,7 @@
 import PizzaCard from "./pizza-card";
 import classes from "./pizza-list.module.css";
 
-const PizzaList = () => {
+const PizzaList = ({ pizzaList }) => {
   return (
     <section className={classes.container}>
       <h1 className={classes.title}>THE BEST PIZZA IN TOWN</h1>
@@ -11,9 +11,9 @@ const PizzaList = () => {
         sit amet, consectetur adipiscing elit.
       </p>
       <div className={classes.wrapper}>
-        <PizzaCard />
-        <PizzaCard />
-        <PizzaCard />
+        {pizzaList.map((pizza) => (
+          <PizzaCard key={pizza._id} pizza={pizza} />
+        ))}
       </div>
     </section>
   );
