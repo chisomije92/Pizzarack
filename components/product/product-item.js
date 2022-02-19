@@ -1,12 +1,16 @@
 import classes from "./product-item.module.css";
 import Image from "next/image";
 import { useState } from "react";
-
+import { useDispatch } from "react-redux";
+import { cartActions } from "../../store/cartSlice";
+import { useSelector } from "react-redux";
 const ProductItem = ({ pizza }) => {
+  const cart = useSelector((state) => state.cart);
   const [price, setPrice] = useState(pizza.prices[0]);
   const [size, setSize] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const [extras, setExtras] = useState([]);
+  const dispatch = useDispatch();
 
   const changePrice = (num) => {
     setPrice(price + num);
@@ -16,6 +20,10 @@ const ProductItem = ({ pizza }) => {
     const diff = pizza.prices[sizeIndex] - pizza.prices[size];
     setSize(sizeIndex);
     changePrice(diff);
+  };
+
+  const clickHandler = () => {
+    dispatch(cartActions.addProduct({ ...pizza, extras, price, quantity }));
   };
 
   const changeHandler = (option, e) => {
@@ -29,7 +37,13 @@ const ProductItem = ({ pizza }) => {
       setExtras(extras.filter((extra) => extra._id !== option._id));
     }
   };
-
+  const obj = {
+    ...pizza,
+    extras,
+    price,
+    quantity,
+  };
+  // console.log(cart.products);
   return (
     <div className={classes.container}>
       <div className={classes.left}>
@@ -84,7 +98,9 @@ const ProductItem = ({ pizza }) => {
             defaultValue={1}
             className={classes.quantity}
           />
-          <button className={classes.button}>Add to Cart</button>
+          <button className={classes.button} onClick={clickHandler}>
+            Add to Cart
+          </button>
         </div>
       </div>
     </div>

@@ -7,8 +7,10 @@ import { CgCloseR } from "react-icons/cg";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { useSelector } from "react-redux";
+import Link from "next/link";
 
 const NavBar = () => {
+  const quantity = useSelector((state) => state.cart.quantity);
   const [open, setOpen] = useState(false);
 
   const hamburgerIcon = (
@@ -31,16 +33,6 @@ const NavBar = () => {
   return (
     <header className={classes.container}>
       <div className={classes.item}>
-        {/*<div className={classes.callButton}>
-           <Image
-            src="/images/desktop_phone.svg"
-            alt="telephone"
-            width="42"
-            height="42"
-            layout="responsive"
-            objectFit="cover"
-          />
-        </div> */}
         <div>
           <Image
             src="/images/logo.png"
@@ -50,10 +42,6 @@ const NavBar = () => {
             objectFit="contain"
           />
         </div>
-        {/* <div className={classes.texts}>
-          <div className={classes.text}>ORDER NOW</div>
-          <div className={classes.text}>012 100 012</div>
-        </div> */}
       </div>
       <nav className={classes.item}>
         <NavList className={classes.list} showImage />
@@ -76,16 +64,20 @@ const NavBar = () => {
           </motion.nav>
         )}
       </AnimatePresence>
-
-      <div className={classes.item}>
-        <div className={classes.cart}>
-          <Image src="/images/cart.svg" alt="cart" width="30px" height="30px" />
-          <div className={classes.counter}>2</div>
+      <Link href={"/cart"} passHref>
+        <div className={classes.item}>
+          <div className={classes.cart}>
+            <Image
+              src="/images/cart.svg"
+              alt="cart"
+              width="30px"
+              height="30px"
+            />
+            <div className={classes.counter}>{quantity}</div>
+          </div>
         </div>
-      </div>
-
+      </Link>
       <div className={classes.item}>
-        {/* <AnimatePresence> */}
         {open ? (
           <motion.span
             animate={{ opacity: 1 }}
@@ -105,7 +97,6 @@ const NavBar = () => {
             {hamburgerIcon}
           </motion.span>
         )}
-        {/* </AnimatePresence> */}
       </div>
     </header>
   );

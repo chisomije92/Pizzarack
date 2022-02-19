@@ -6,13 +6,16 @@ const PizzaCard = ({ pizza }) => {
     <div className={classes.container}>
       <div className={classes.imageContainer}>
         <Link href={`/product/${pizza._id}`} passHref>
-          <Image
-            src={pizza.img}
-            alt=""
-            width="12300"
-            height="10000"
-            layout="responsive"
-          />
+          <a>
+            <Image
+              // src={pizza.img}
+              src={"/images/pizza.png"}
+              alt=""
+              width="12300"
+              height="10000"
+              layout="responsive"
+            />
+          </a>
         </Link>
       </div>
       <h1 className={classes.title}>{pizza.title}</h1>
