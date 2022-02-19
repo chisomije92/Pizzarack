@@ -13,7 +13,7 @@ export const getServerSideProps = async ({ params }) => {
   // console.log(id);
   await dbConnect();
   const data = await Product.findById(id);
-  console.log(JSON.parse(JSON.stringify(data)));
+  // console.log(JSON.parse(JSON.stringify(data)));
 
   return {
     props: {

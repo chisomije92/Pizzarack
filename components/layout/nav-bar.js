@@ -6,6 +6,7 @@ import { CgMenu } from "react-icons/cg";
 import { CgCloseR } from "react-icons/cg";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 const NavBar = () => {
   const [open, setOpen] = useState(false);

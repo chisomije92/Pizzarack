@@ -1,10 +1,15 @@
 import Layout from "../components/layout/layout";
 import "../styles/globals.css";
+import { Provider } from "react-redux";
+import store from "../store/cartSlice";
+
 function MyApp({ Component, pageProps }) {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <Provider store={store}>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </Provider>
   );
 }
 
