@@ -1,10 +1,25 @@
 import classes from "./cart-data.module.css";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
+import { PaystackButton } from "react-paystack";
 const CartData = () => {
   const cart = useSelector((state) => state.cart);
 
   const dispatch = useDispatch();
+  const router = useRouter();
+  const componentProps = {
+    email: "jeremiahlawrence14@gmail.com",
+    amount: cart.total * 100,
+    metadata: {
+      name: "Jeremiah Lawrence",
+      phone: "08135069250",
+    },
+    publicKey: "pk_test_f3d22f397b9d064d5acd5cca37a3c68bdaa2f88a",
+    text: "CHECKOUT NOW!",
+    onSuccess: () => router.push("/"),
+  };
+
   return (
     <div className={classes.container}>
       <div className={classes.left}>
@@ -55,37 +70,6 @@ const CartData = () => {
                 </td>
               </tr>
             ))}
-            {/* {arr.map((i) => (
-            <tr className={classes.tr} key={i}>
-              <td>
-                <div className={classes.imageContainer}>
-                  <Image
-                    src="/images/pizza.png"
-                    layout="fill"
-                    objectFit="cover"
-                    alt="pizza"
-                  />
-                </div>
-              </td>
-              <td>
-                <span className={classes.name}>CORALZO</span>
-              </td>
-              <td>
-                <span className={classes.extras}>
-                  Double ingredient, spicy sauce
-                </span>
-              </td>
-              <td>
-                <span className={classes.price}> ₦5500</span>
-              </td>
-              <td>
-                <span className={classes.quantity}>2</span>
-              </td>
-              <td>
-                <span className={classes.total}> ₦11000</span>
-              </td>
-            </tr>
-          ))} */}
           </tbody>
         </table>
       </div>
@@ -101,7 +85,8 @@ const CartData = () => {
           <div className={classes.totalText}>
             <b className={classes.totalTextTitle}>Total:</b> ₦{cart.total}
           </div>
-          <button className={classes.button}>CHECKOUT NOW!</button>
+          {/* <button className={classes.button}>CHECKOUT NOW!</button> */}
+          <PaystackButton className={classes.button} {...componentProps} />
         </div>
       </div>
     </div>
