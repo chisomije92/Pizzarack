@@ -19,7 +19,7 @@ export const getPizzaData = async (res, data) => {
 
 const handler = async (req, res) => {
   const { method } = req;
-  dbConnect();
+  await dbConnect();
   if (method === "GET") {
     try {
       const products = await Product.find();

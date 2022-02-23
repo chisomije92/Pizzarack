@@ -10,10 +10,9 @@ export default ProductPage;
 
 export const getServerSideProps = async ({ params }) => {
   const id = params.id;
-  // console.log(id);
+
   await dbConnect();
   const data = await Product.findById(id);
-  // console.log(JSON.parse(JSON.stringify(data)));
 
   return {
     props: {
