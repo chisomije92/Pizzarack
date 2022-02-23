@@ -49,12 +49,17 @@
   margin-right: 10px;
 }
 
-.button {
+.button,
+.paidButton {
   height: 40px;
   color: #dd3939;
   font-weight: bold;
   cursor: pointer;
   margin-top: 20px;
+}
+
+.paidButton {
+  color: green;
 }
 
 @media screen and (max-width: 833px) {

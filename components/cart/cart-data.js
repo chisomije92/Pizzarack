@@ -1,9 +1,11 @@
 import classes from "./cart-data.module.css";
 import Image from "next/image";
+import { useState } from "react";
 import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
 import { PaystackButton } from "react-paystack";
 const CartData = () => {
+  const [isPaid, setIsPaid] = useState(false);
   const cart = useSelector((state) => state.cart);
 
   const dispatch = useDispatch();
@@ -17,7 +19,9 @@ const CartData = () => {
     },
     publicKey: "pk_test_f3d22f397b9d064d5acd5cca37a3c68bdaa2f88a",
     text: "CHECKOUT NOW!",
-    onSuccess: () => router.push("/"),
+    onSuccess: () => {
+      setIsPaid(true);
+    },
   };
 
   return (
@@ -85,8 +89,10 @@ const CartData = () => {
           <div className={classes.totalText}>
             <b className={classes.totalTextTitle}>Total:</b> ₦{cart.total}
           </div>
-          {/* <button className={classes.button}>CHECKOUT NOW!</button> */}
-          <PaystackButton className={classes.button} {...componentProps} />
+          {isPaid && <button className={classes.paidButton}>PAID!</button>}
+          {!isPaid && (
+            <PaystackButton className={classes.button} {...componentProps} />
+          )}
         </div>
       </div>
     </div>
