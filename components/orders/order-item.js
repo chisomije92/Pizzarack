@@ -102,7 +102,7 @@ const OrderItem = () => {
             <b className={classes.totalTextTitle}>Subtotal:</b> ₦22000
           </div>
           <div className={classes.totalText}>
-            <b className={classes.totalTextTitle}>Discount:</b>$0.00
+            <b className={classes.totalTextTitle}>Discount:</b>₦0.00
           </div>
           <div className={classes.totalText}>
             <b className={classes.totalTextTitle}>Total:</b> ₦22000

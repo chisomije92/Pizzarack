@@ -4,12 +4,28 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
 import { PaystackButton } from "react-paystack";
+import axios from "axios";
 const CartData = () => {
   const [isPaid, setIsPaid] = useState(false);
   const cart = useSelector((state) => state.cart);
-
   const dispatch = useDispatch();
   const router = useRouter();
+
+  const createOrder = async (data) => {
+    try {
+      const res = await fetch("/api/orders", {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      const resData = res.json();
+      res.status === 201 && router.push(`/orders/${resData._id}`);
+    } catch (err) {
+      console.log(err);
+    }
+  };
   const componentProps = {
     email: "jeremiahlawrence14@gmail.com",
     amount: cart.total * 100,
@@ -21,6 +37,12 @@ const CartData = () => {
     text: "CHECKOUT NOW!",
     onSuccess: () => {
       setIsPaid(true);
+      createOrder({
+        customer: "Jeremiah Lawrence",
+        address: "2, Great Road, Lagos, Nigeria",
+        total: cart.total,
+        method: 1,
+      });
     },
   };
 
