@@ -1,19 +1,20 @@
 import AdminData from "../../components/admin/admin-data";
 import dbConnect from "../../lib/mongo";
 import Product from "../../models/Product";
-// import Order from "../../models/orders";
+import Order from "../../models/Order";
 
-const AdminPage = () => {
-  return <AdminData />;
+const AdminPage = ({ orders, products }) => {
+  return <AdminData orders={orders} products={products} />;
 };
 
 export const getServerSideProps = async () => {
   await dbConnect();
-  const products = await Product.find();
-  //   const orders = await Order.find();
+  const productsData = await Product.find();
+  const ordersData = await Order.find();
   return {
     props: {
-      productsData: JSON.parse(JSON.stringify(products)),
+      products: JSON.parse(JSON.stringify(productsData)),
+      orders: JSON.parse(JSON.stringify(ordersData)),
     },
   };
 };

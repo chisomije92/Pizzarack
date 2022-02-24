@@ -1,6 +1,59 @@
 import classes from "./admin-data.module.css";
 import Image from "next/image";
-const AdminData = () => {
+import { useState } from "react";
+import axios from "axios";
+const AdminData = ({ orders, products }) => {
+  const [pizzaList, setPizzaList] = useState(products);
+  const [ordersList, setOrdersList] = useState(orders);
+  const status = ["preparing", "on the way", "delivered"];
+
+  const deleteHandler = async (id) => {
+    try {
+      await fetch(`/api/products/${id}`, {
+        method: "DELETE",
+      });
+
+      setPizzaList(pizzaList.filter((pizza) => pizza._id !== id));
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const statusFN = (id) => {
+    const item = ordersList.filter((order) => order._id === id)[0];
+    const currentStatus = item.status;
+    if (currentStatus < 2) {
+      return {
+        status: currentStatus + 1,
+      };
+    } else {
+      return {
+        status: 2,
+      };
+    }
+  };
+
+  const statusHandler = async (id) => {
+    const statusObj = statusFN(id);
+    try {
+      const res = await fetch(`/api/orders/${id}`, {
+        method: "PUT",
+        body: JSON.stringify(statusObj),
+        headers: {
+          "Content-type": "application/json",
+        },
+      });
+      const data = await res.json();
+
+      setOrdersList([data, ...ordersList.filter((order) => order._id !== id)]);
+      console.log(ordersList);
+      //   const i = [data, ...ordersList.filter((order) => order._id !== id)];
+      //   console.log(i);
+      console.log(data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
   return (
     <section className={classes.container}>
       <div className={classes.item}>
@@ -15,26 +68,33 @@ const AdminData = () => {
               <th>Action</th>
             </tr>
           </thead>
-          <tbody>
-            <tr className={classes.trTitle}>
-              <td>
-                <Image
-                  src="/images/pizza.png"
-                  width={50}
-                  height={50}
-                  objectFit="cover"
-                  alt="pizza"
-                />
-              </td>
-              <td>PizzaId</td>
-              <td>Pizza Title</td>
-              <td>₦3400</td>
-              <td>
-                <button className={classes.button}>Edit</button>
-                <button className={classes.button}>Delete</button>
-              </td>
-            </tr>
-          </tbody>
+          {pizzaList.map((product) => (
+            <tbody key={product._id}>
+              <tr className={classes.trTitle}>
+                <td>
+                  <Image
+                    src={product.img}
+                    width={50}
+                    height={50}
+                    objectFit="cover"
+                    alt="pizza"
+                  />
+                </td>
+                <td>{product._id.slice(0, 5)}...</td>
+                <td>{product.title}</td>
+                <td>{product.prices[0]}</td>
+                <td>
+                  <button className={classes.button}>Edit</button>
+                  <button
+                    className={classes.button}
+                    onClick={() => deleteHandler(product._id)}
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          ))}
         </table>
       </div>
 
@@ -50,18 +110,24 @@ const AdminData = () => {
               <th>Action</th>
             </tr>
           </thead>
-          <tbody>
-            <tr className={classes.trTitle}>
-              <td>{"12348489495788490".slice(0, 5)}...</td>
-              <td>John Doe</td>
-              <td>₦3400</td>
-              <td>Paid</td>
-              <td>preparing</td>
-              <td>
-                <button>Next Stage</button>
-              </td>
-            </tr>
-          </tbody>
+          {ordersList.map((order) => (
+            <tbody key={order._id}>
+              <tr className={classes.trTitle}>
+                <td>{order._id.slice(0, 5)}...</td>
+                <td>{order.customer}</td>
+                <td>₦{order.total}</td>
+                <td>
+                  {order.method === 0 ? <span>cash</span> : <span>paid</span>}
+                </td>
+                <td>{status[order.status]}</td>
+                <td>
+                  <button onClick={statusHandler.bind(null, order._id)}>
+                    Next Stage
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          ))}
         </table>
       </div>
     </section>

@@ -1,7 +1,7 @@
 import dbConnect from "../../../lib/mongo";
 import Product from "../../../models/Product";
 
-export const getPizzaData = async (res, data) => {
+export const handler = async (req, res) => {
   const {
     method,
     query: { id },
@@ -37,3 +37,5 @@ export const getPizzaData = async (res, data) => {
     }
   }
 };
+
+export default handler;
