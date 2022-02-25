@@ -18,7 +18,8 @@ export const getPizzaData = async (res, data) => {
 };
 
 const handler = async (req, res) => {
-  const { method } = req;
+  const { method, cookies } = req;
+  const token = cookies.token;
   await dbConnect();
   if (method === "GET") {
     try {
@@ -41,6 +42,9 @@ const handler = async (req, res) => {
   }
 
   if (method === "POST") {
+    if (!token || token !== process.env.token) {
+      return res.status(401).json("Not authenticated!");
+    }
     try {
       const product = await Product.create(req.body);
       res.status(201).json(product);

@@ -40,16 +40,13 @@ const AdminData = ({ orders, products }) => {
         method: "PUT",
         body: JSON.stringify(statusObj),
         headers: {
-          "Content-type": "application/json",
+          "Content-Type": "application/json",
         },
       });
       const data = await res.json();
 
       setOrdersList([data, ...ordersList.filter((order) => order._id !== id)]);
       console.log(ordersList);
-      //   const i = [data, ...ordersList.filter((order) => order._id !== id)];
-      //   console.log(i);
-      console.log(data);
     } catch (err) {
       console.log(err);
     }

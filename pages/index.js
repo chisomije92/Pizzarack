@@ -8,7 +8,7 @@ import PizzaList from "../components/pizza-list";
 // import { connectDatabase } from "../lib/helpers";
 // import { getPizzaData } from "../lib/helpers";
 
-export default function Home({ pizzaList }) {
+export default function Home({ pizzaList, admin }) {
   return (
     <div>
       <Head>
@@ -20,35 +20,26 @@ export default function Home({ pizzaList }) {
         <link rel="icon" href="/pizza_snack_icon.svg" />
       </Head>
       <Featured />
+
       <PizzaList pizzaList={pizzaList} />
     </div>
   );
 }
 
-export const getServerSideProps = async ({ req, res }) => {
-  // const { req, res } = context;
-  // console.log(req);
-  // let products = await getPizzaData(res, Product);
-  // console.log(products);
-  // products = JSON.stringify(JSON.parse(products));
-  // res.status(200).json(products);
-  // console.log(products);
-  // const res = await axios.get("http://localhost:3000/api/products");
-  // console.log(res);
+export const getServerSideProps = async (ctx) => {
+  const myCookie = ctx.req?.cookies || "";
+  let admin = false;
 
-  // const response = await fetch("http://localhost:3000/api/products");
-  // const data = await response.json();
-
-  // const client = await connectDatabase();
-  // const db = client.db().collection("products").find({});
-  // const data = await db.toArray();
+  if (myCookie.token === process.env.TOKEN) {
+    admin = true;
+  }
   await dbConnect();
   const data = await Product.find();
-  // console.log(JSON.parse(JSON.stringify(data)));
 
   return {
     props: {
       pizzaList: JSON.parse(JSON.stringify(data)),
+      admin,
     },
   };
 };
