@@ -5,10 +5,11 @@ import Product from "../models/Product";
 import Featured from "../components/featured";
 // import { getPizzaData } from "./api/products";
 import PizzaList from "../components/pizza-list";
-// import { connectDatabase } from "../lib/helpers";
-// import { getPizzaData } from "../lib/helpers";
-
+import { useState } from "react";
+import AddButton from "../components/add/add-button";
+import Add from "../components/add/add";
 export default function Home({ pizzaList, admin }) {
+  const [close, setClose] = useState(true);
   return (
     <div>
       <Head>
@@ -20,8 +21,9 @@ export default function Home({ pizzaList, admin }) {
         <link rel="icon" href="/pizza_snack_icon.svg" />
       </Head>
       <Featured />
-
+      {admin && <AddButton setClose={setClose} />}
       <PizzaList pizzaList={pizzaList} />
+      {!close && <Add />}
     </div>
   );
 }
