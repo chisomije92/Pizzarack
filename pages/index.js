@@ -1,9 +1,8 @@
-import axios from "axios";
 import Head from "next/head";
 import dbConnect from "../lib/mongo";
 import Product from "../models/Product";
 import Featured from "../components/featured";
-// import { getPizzaData } from "./api/products";
+
 import PizzaList from "../components/pizza-list";
 import { useState } from "react";
 import AddButton from "../components/add/add-button";

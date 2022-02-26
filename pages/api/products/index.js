@@ -31,14 +31,6 @@ const handler = async (req, res) => {
       res.status(500).json(err);
       // res.end();
     }
-    //   try {
-    //     await getPizzaData(res);
-    //     // res.status(200).json(products);
-    //     // res.end();
-    //   } catch (err) {
-    //     res.status(500).json(err);
-    //   }
-    // await getPizzaData(res, Product);
   }
 
   if (method === "POST") {

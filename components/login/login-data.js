@@ -10,23 +10,24 @@ const LoginData = () => {
 
   const handleClick = async () => {
     try {
-      await axios.post("http://localhost:3000/api/login", {
-        username,
-        password,
+      //   await axios.post("http://localhost:3000/api/login", {
+      //     username,
+      //     password,
+      //   });
+
+      const loginDetails = {
+        username: username,
+        password: password,
+      };
+
+      const res = await fetch("/api/login", {
+        method: "POST",
+        body: JSON.stringify(loginDetails),
+        headers: {
+          "Content-Type": "application/json",
+        },
       });
 
-      //   const loginDetails = {
-      //     username: username,
-      //     password: password,
-      //   };
-
-      //   const res = await fetch("/api/login", {
-      //     method: "PUT",
-      //     body: JSON.stringify(loginDetails),
-      //     headers: {
-      //       "Content-Type": "application/json",
-      //     },
-      //   });
       router.push("/admin");
     } catch (err) {
       setError(true);

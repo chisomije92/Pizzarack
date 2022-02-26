@@ -3,6 +3,7 @@ import cookie from "cookie";
 const handler = (req, res) => {
   if (req.method === "POST") {
     const { username, password } = req.body;
+
     if (
       username === process.env.ADMIN_USERNAME &&
       password === process.env.ADMIN_PASSWORD
@@ -20,10 +21,6 @@ const handler = (req, res) => {
       res.status(400).json("Wrong Credentials!");
     }
   }
-
-  //   if (req.method !== "POST") {
-  //     res.status(400).json("METHOD NOT ALLOWED");
-  //   }
 };
 
 export default handler;
