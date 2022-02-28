@@ -72,7 +72,6 @@
 @media screen and (max-width: 780px) {
   .container {
     flex-direction: column;
-    /* padding: 20px; */
   }
 
   .table {

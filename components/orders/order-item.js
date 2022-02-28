@@ -95,6 +95,7 @@ const OrderItem = () => {
           </div>
         </div>
       </div>
+
       <div className={classes.right}>
         <div className={classes.wrapper}>
           <h2 className={classes.title}>CART TOTAL</h2>

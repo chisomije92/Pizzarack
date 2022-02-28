@@ -10,15 +10,10 @@
 }
 
 .imageContainer {
-  /* width: 100%; */
   width: max(100%, 120px);
-
-  /* display: block; */
 }
 
 .title {
-  /* font-size: 18px; */
-
   font-size: max(1.1rem, 1vw);
   font-weight: bold;
   color: #d1411e;

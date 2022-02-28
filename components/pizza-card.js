@@ -8,7 +8,6 @@ const PizzaCard = ({ pizza }) => {
         <Link href={`/product/${pizza._id}`} passHref>
           <a>
             <Image
-              // src={pizza.img}
               src={"/images/pizza.png"}
               alt=""
               width="12300"

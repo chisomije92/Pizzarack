@@ -5,7 +5,6 @@ const NavList = (props) => {
   return (
     <ul className={props.className}>
       <li className={classes.listItem}>Homepage</li>
-
       <li className={classes.listItem}>Products</li>
       <li className={classes.listItem}>Menu</li>
       <li className={classes.listItem}>Events</li>

@@ -44,7 +44,7 @@ const NavBar = () => {
         </div>
       </div>
       <nav className={classes.item}>
-        <NavList className={classes.list} showImage />
+        <NavList className={classes.list} />
       </nav>
 
       <AnimatePresence>

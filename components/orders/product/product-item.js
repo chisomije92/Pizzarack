@@ -2,7 +2,7 @@ import classes from "./product-item.module.css";
 import Image from "next/image";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { cartActions } from "../../store/cartSlice";
+import { cartActions } from "../../../store/cartSlice";
 import { useSelector } from "react-redux";
 const ProductItem = ({ pizza }) => {
   const cart = useSelector((state) => state.cart);
@@ -37,13 +37,7 @@ const ProductItem = ({ pizza }) => {
       setExtras(extras.filter((extra) => extra._id !== option._id));
     }
   };
-  const obj = {
-    ...pizza,
-    extras,
-    price,
-    quantity,
-  };
-  // console.log(cart.products);
+
   return (
     <div className={classes.container}>
       <div className={classes.left}>

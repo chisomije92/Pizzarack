@@ -1,4 +1,4 @@
-import ProductItem from "../../components/product/product-item";
+import ProductItem from "../../components/orders/product/product-item";
 import dbConnect from "../../lib/mongo";
 import Product from "../../models/Product";
 

@@ -1,6 +1,6 @@
 import classes from "./add.module.css";
 import { useState } from "react";
-import axios from "axios";
+
 const Add = ({ setClose }) => {
   const [file, setFile] = useState(null);
   const [title, setTitle] = useState(null);

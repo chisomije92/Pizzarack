@@ -1,6 +1,5 @@
 .footer {
   height: calc(100vh - 100px);
-  /* background-color: #222; */
   background: rgb(16, 13, 24);
   display: flex;
 }
@@ -19,7 +18,7 @@
 
 .card {
   flex: 1;
-  /* padding: 0 20px; */
+
   padding-right: 14px;
 }
 

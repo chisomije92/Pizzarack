@@ -2,13 +2,13 @@ import classes from "./cart-data.module.css";
 import Image from "next/image";
 import { useState } from "react";
 import { useRouter } from "next/router";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { PaystackButton } from "react-paystack";
-import axios from "axios";
+
 const CartData = () => {
   const [isPaid, setIsPaid] = useState(false);
   const cart = useSelector((state) => state.cart);
-  const dispatch = useDispatch();
+
   const router = useRouter();
 
   const createOrder = async (data) => {
@@ -20,7 +20,7 @@ const CartData = () => {
           "Content-Type": "application/json",
         },
       });
-      const resData = res.json();
+      const resData = await res.json();
       res.status === 201 && router.push(`/orders/${resData._id}`);
     } catch (err) {
       console.log(err);

@@ -1,7 +1,7 @@
 import classes from "./admin-data.module.css";
 import Image from "next/image";
 import { useState } from "react";
-import axios from "axios";
+
 const AdminData = ({ orders, products }) => {
   const [pizzaList, setPizzaList] = useState(products);
   const [ordersList, setOrdersList] = useState(orders);

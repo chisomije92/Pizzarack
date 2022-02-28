@@ -1,4 +1,3 @@
-import Image from "next/image";
 import classes from "./nav-list.module.css";
 import { motion } from "framer-motion";
 const MobileList = (props) => {

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
 import classes from "./login-data.module.css";
-import axios from "axios";
+
 const LoginData = () => {
   const [username, setUsername] = useState(null);
   const [password, setPassword] = useState(null);
@@ -10,11 +10,6 @@ const LoginData = () => {
 
   const handleClick = async () => {
     try {
-      //   await axios.post("http://localhost:3000/api/login", {
-      //     username,
-      //     password,
-      //   });
-
       const loginDetails = {
         username: username,
         password: password,
