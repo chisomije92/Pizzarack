@@ -1,50 +1,16 @@
 import classes from "./cart-data.module.css";
+import ReactDom from "react-dom";
 import Image from "next/image";
 import { useState } from "react";
 import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
-import { PaystackButton } from "react-paystack";
 
+import CartModal from "./cart-modal";
 const CartData = () => {
-  const [isPaid, setIsPaid] = useState(false);
+  const [showModal, setShowModal] = useState(false);
   const cart = useSelector((state) => state.cart);
 
   const router = useRouter();
-
-  const createOrder = async (data) => {
-    try {
-      const res = await fetch("/api/orders", {
-        method: "POST",
-        body: JSON.stringify(data),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-      const resData = await res.json();
-      res.status === 201 && router.push(`/orders/${resData._id}`);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-  const componentProps = {
-    email: "jeremiahlawrence14@gmail.com",
-    amount: cart.total * 100,
-    metadata: {
-      name: "Jeremiah Lawrence",
-      phone: "08135069250",
-    },
-    publicKey: "pk_test_f3d22f397b9d064d5acd5cca37a3c68bdaa2f88a",
-    text: "CHECKOUT NOW!",
-    onSuccess: () => {
-      setIsPaid(true);
-      createOrder({
-        customer: "Jeremiah Lawrence",
-        address: "2, Great Road, Lagos, Nigeria",
-        total: cart.total,
-        method: 1,
-      });
-    },
-  };
 
   return (
     <div className={classes.container}>
@@ -111,10 +77,14 @@ const CartData = () => {
           <div className={classes.totalText}>
             <b className={classes.totalTextTitle}>Total:</b> ₦{cart.total}
           </div>
-          {isPaid && <button className={classes.paidButton}>PAID!</button>}
-          {!isPaid && (
-            <PaystackButton className={classes.button} {...componentProps} />
-          )}
+          <button className={classes.button} onClick={() => setShowModal(true)}>
+            PROCEED TO CHECKOUT
+          </button>
+          {showModal &&
+            ReactDom.createPortal(
+              <CartModal setShowModal={() => setShowModal(false)} />,
+              document.getElementById("modal")
+            )}
         </div>
       </div>
     </div>

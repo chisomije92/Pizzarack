@@ -1,7 +1,12 @@
 import classes from "./order-item.module.css";
 import Image from "next/image";
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 
 const OrderItem = () => {
+  const router = useRouter();
+  const id = router.query.id;
+  console.log(id);
   const status = 0;
 
   const statusClass = (index) => {
@@ -9,6 +14,31 @@ const OrderItem = () => {
     if (index - status === 1) return classes.inProgress;
     if (index - status > 1) return classes.notDone;
   };
+
+  // const getOrderData = async (id) => {
+  //   const response = await fetch(`/orders/${id}`);
+  //   const data = await response.json();
+  //   if (!response.ok) {
+  //     throw new Error("No order found!");
+  //   }
+  //   return data;
+  // };
+
+  useEffect(() => {
+    async function fetchData(id) {
+      try {
+        const response = await fetch(`/orders/${id}`);
+        const data = await response.json();
+        if (!response.ok) {
+          throw new Error("No order found!");
+        }
+        return data;
+      } catch (err) {
+        console.log(err);
+      }
+    }
+    fetchData(id);
+  });
   return (
     <div className={classes.container}>
       <div className={classes.left}>

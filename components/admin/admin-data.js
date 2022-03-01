@@ -46,7 +46,6 @@ const AdminData = ({ orders, products }) => {
       const data = await res.json();
 
       setOrdersList([data, ...ordersList.filter((order) => order._id !== id)]);
-      console.log(ordersList);
     } catch (err) {
       console.log(err);
     }
