@@ -1,13 +1,9 @@
 import classes from "./order-item.module.css";
 import Image from "next/image";
-import { useEffect } from "react";
-import { useRouter } from "next/router";
 
-const OrderItem = () => {
-  const router = useRouter();
-  const id = router.query.id;
-  console.log(id);
-  const status = 0;
+const OrderItem = ({ order }) => {
+  console.log(order);
+  const status = order.status;
 
   const statusClass = (index) => {
     if (index - status < 1) return classes.done;
@@ -15,30 +11,6 @@ const OrderItem = () => {
     if (index - status > 1) return classes.notDone;
   };
 
-  // const getOrderData = async (id) => {
-  //   const response = await fetch(`/orders/${id}`);
-  //   const data = await response.json();
-  //   if (!response.ok) {
-  //     throw new Error("No order found!");
-  //   }
-  //   return data;
-  // };
-
-  useEffect(() => {
-    async function fetchData(id) {
-      try {
-        const response = await fetch(`/orders/${id}`);
-        const data = await response.json();
-        if (!response.ok) {
-          throw new Error("No order found!");
-        }
-        return data;
-      } catch (err) {
-        console.log(err);
-      }
-    }
-    fetchData(id);
-  });
   return (
     <div className={classes.container}>
       <div className={classes.left}>
@@ -55,16 +27,16 @@ const OrderItem = () => {
             <tbody>
               <tr className={classes.tr}>
                 <td>
-                  <span className={classes.id}>129837819237</span>
+                  <span className={classes.id}>{order._id}</span>
                 </td>
                 <td>
-                  <span className={classes.name}>John Doe</span>
+                  <span className={classes.name}>{order.customer}</span>
                 </td>
                 <td>
-                  <span className={classes.address}> 43 King st. Lagos</span>
+                  <span className={classes.address}> {order.address}</span>
                 </td>
                 <td>
-                  <span className={classes.total}> ₦22000</span>
+                  <span className={classes.total}> {order.total}</span>
                 </td>
               </tr>
             </tbody>
@@ -80,7 +52,7 @@ const OrderItem = () => {
                 src="/images/checked.png"
                 width={20}
                 height={20}
-                alt=""
+                alt="payment icon"
               />
             </div>
           </div>
@@ -93,7 +65,7 @@ const OrderItem = () => {
                 src="/images/checked.png"
                 width={20}
                 height={20}
-                alt=""
+                alt="baking icon"
               />
             </div>
           </div>
@@ -106,7 +78,7 @@ const OrderItem = () => {
                 src="/images/checked.png"
                 width={20}
                 height={20}
-                alt=""
+                alt="bike icon"
               />
             </div>
           </div>
@@ -119,7 +91,7 @@ const OrderItem = () => {
                 src="/images/checked.png"
                 width={20}
                 height={20}
-                alt=""
+                alt="delivered icon"
               />
             </div>
           </div>
@@ -130,13 +102,13 @@ const OrderItem = () => {
         <div className={classes.wrapper}>
           <h2 className={classes.title}>CART TOTAL</h2>
           <div className={classes.totalText}>
-            <b className={classes.totalTextTitle}>Subtotal:</b> ₦22000
+            <b className={classes.totalTextTitle}>Subtotal:</b> ₦{order.total}
           </div>
           <div className={classes.totalText}>
             <b className={classes.totalTextTitle}>Discount:</b>₦0.00
           </div>
           <div className={classes.totalText}>
-            <b className={classes.totalTextTitle}>Total:</b> ₦22000
+            <b className={classes.totalTextTitle}>Total:</b> ₦{order.total}
           </div>
           <button disabled className={classes.button}>
             PAID!
