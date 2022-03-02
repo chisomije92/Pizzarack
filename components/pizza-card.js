@@ -6,9 +6,9 @@ const PizzaCard = ({ pizza }) => {
     <div className={classes.container}>
       <div className={classes.imageContainer}>
         <Link href={`/product/${pizza._id}`} passHref>
-          <a>
+          <a className={classes.anchor}>
             <Image
-              src={"/images/pizza.png"}
+              src={pizza.img}
               alt=""
               width="12300"
               height="10000"

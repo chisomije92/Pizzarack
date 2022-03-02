@@ -12,6 +12,11 @@ const OrderSchema = new mongoose.Schema(
       required: true,
       maxlength: 200,
     },
+    email: {
+      type: String,
+      required: true,
+      maxlength: 100,
+    },
     total: {
       type: Number,
       required: true,

@@ -1,0 +1,117 @@
+.container {
+  /* height: 110vh; */
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.item:first-child {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgb(16, 13, 24);
+  font-size: 15px;
+  font-weight: bold;
+  margin: auto;
+  width: 30%;
+}
+
+.item h2 {
+  font-size: 1.7rem;
+  color: rgb(218, 45, 45);
+  text-align: center;
+}
+
+.item h4 {
+  font-size: 1.2rem;
+}
+
+.item ol {
+  margin-top: -12px;
+}
+
+.input {
+  min-width: 80%;
+  margin-top: 6px;
+  height: 30px;
+}
+
+.searchButton {
+  border: none;
+  color: white;
+  padding: 5px;
+  cursor: pointer;
+  background: rgb(16, 13, 24);
+  font-size: 16px;
+  font-weight: bold;
+  margin: 12px 0 12px 0;
+  min-width: 60%;
+}
+
+.item h1 {
+  font-size: 2rem;
+  color: rgb(218, 45, 45);
+  text-align: center;
+}
+
+.table {
+  width: 100%;
+  border-spacing: 20px;
+  text-align: left;
+}
+
+.table button {
+  padding: 5px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 483px) {
+  .table {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 30px;
+  }
+
+  .trTitle {
+    display: none;
+  }
+
+  .tr {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .customer::before {
+    content: "Name: ";
+    font-weight: 500;
+  }
+
+  .address::before {
+    content: "Address: ";
+    font-weight: 500;
+  }
+
+  .total::before {
+    content: "Amount: ";
+    font-weight: 500;
+  }
+
+  .createdAt::before {
+    content: "Date of Order: ";
+    font-weight: 500;
+  }
+  .email::before {
+    content: "Email: ";
+    font-weight: 500;
+  }
+}

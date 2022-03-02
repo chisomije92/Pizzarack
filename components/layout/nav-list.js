@@ -6,7 +6,7 @@ const NavList = (props) => {
     <ul className={props.className}>
       <li className={classes.listItem}>Homepage</li>
       <li className={classes.listItem}>Products</li>
-      <li className={classes.listItem}>Menu</li>
+      <li className={classes.listItem}>Cart</li>
       <li className={classes.listItem}>Events</li>
       <li className={classes.listItem}>Blog</li>
       <li className={classes.listItem}>Contact</li>

@@ -7,6 +7,7 @@ import PizzaList from "../components/pizza-list";
 import { useState } from "react";
 import AddButton from "../components/add/add-button";
 import Add from "../components/add/add";
+// let phoneNumber;
 export default function Home({ pizzaList, admin }) {
   const [close, setClose] = useState(true);
   return (
@@ -28,6 +29,7 @@ export default function Home({ pizzaList, admin }) {
 }
 
 export const getServerSideProps = async (ctx) => {
+  // phoneNumber = +2348135069250;
   const myCookie = ctx.req?.cookies || "";
   let admin = false;
 
@@ -36,7 +38,7 @@ export const getServerSideProps = async (ctx) => {
   }
   await dbConnect();
   const data = await Product.find();
-
+  // console.log(phoneNumber);
   return {
     props: {
       pizzaList: JSON.parse(JSON.stringify(data)),

@@ -60,6 +60,7 @@ const CartForm = ({ setShowModal }) => {
       createOrder({
         customer: name,
         address: address,
+        email: email,
         total: cart.total,
         method: 1,
       });

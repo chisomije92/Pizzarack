@@ -2,7 +2,6 @@ import classes from "./order-item.module.css";
 import Image from "next/image";
 
 const OrderItem = ({ order }) => {
-  console.log(order);
   const status = order.status;
 
   const statusClass = (index) => {
@@ -36,7 +35,7 @@ const OrderItem = ({ order }) => {
                   <span className={classes.address}> {order.address}</span>
                 </td>
                 <td>
-                  <span className={classes.total}> {order.total}</span>
+                  <span className={classes.total}> ₦{order.total}</span>
                 </td>
               </tr>
             </tbody>

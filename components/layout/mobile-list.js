@@ -35,7 +35,7 @@ const MobileList = (props) => {
         className={classes.listItem}
         onClick={props.onClick}
       >
-        Menu
+        Cart
       </motion.li>
 
       <motion.li
