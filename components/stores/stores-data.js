@@ -1,6 +1,46 @@
+import { useState } from "react";
 import classes from "./stores-data.module.css";
 
 const StoresData = () => {
+  const [isFirstLoad, setIsFirstLoad] = useState(true);
+  const [email, setEmail] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [isSubscribed, setIsSubscribed] = useState(false);
+
+  const emailIsValid = email.includes("@") && email !== "";
+
+  const cssInputClassFn = () => {
+    if (!isLoading && !isFirstLoad && !emailIsValid) {
+      return [classes.input, classes.error].join(" ");
+    }
+    return [classes.input].join(" ");
+  };
+  const subscribeHandler = async (email) => {
+    setIsFirstLoad(false);
+    if (!emailIsValid) {
+      return;
+    }
+
+    try {
+      setIsLoading(true);
+      const res = await fetch("/api/stores", {
+        method: "POST",
+        body: JSON.stringify({ email }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (!res.ok) {
+        throw new Error("Email could not be sent!");
+      }
+      setIsSubscribed(true);
+    } catch (err) {
+      console.log(err);
+    }
+    setIsLoading(false);
+  };
+
   return (
     <section className={classes.container}>
       <div className={classes.item}>
@@ -117,10 +157,25 @@ const StoresData = () => {
           type="email"
           id="email"
           placeholder="Enter email"
-          className={classes.input}
+          value={email}
+          onChange={(e) => {
+            setEmail(e.target.value);
+          }}
+          onPointerDown={(e) => setIsFirstLoad(true)}
+          className={cssInputClassFn()}
           required
         />
-        <button className={classes.subscribeButton}>Subscribe</button>
+        <button
+          className={classes.subscribeButton}
+          onClick={subscribeHandler.bind(null, email)}
+        >
+          Subscribe
+        </button>
+
+        {!isLoading && !isFirstLoad && emailIsValid && isSubscribed && (
+          <p className={classes.subscribed}>Subscribed!</p>
+        )}
+        {isLoading && <p className={classes.subscribing}>Subscribing...</p>}
       </div>
     </section>
   );
