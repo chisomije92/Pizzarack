@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import classes from "./order-data.module.css";
 
 const OrderData = () => {
@@ -27,9 +27,6 @@ const OrderData = () => {
     <p className={classes.noOrders}>You have no pending order</p>
   );
   const loading = (
-    // <p className={classes.loading}>
-    //   Please hold on <span>...</span>
-    // </p>
     <div className={classes["lds-roller"]}>
       <div></div>
       <div></div>
@@ -158,15 +155,6 @@ const OrderData = () => {
           tableContent}
       </div>
     </section>
-    // <ul>
-    //   {selectedOrders.map((order) => (
-    //     <li key={order._id}>
-    //       <div onClick={() => router.push(`/orders/${order._id}`)}>
-    //         {order.customer}
-    //       </div>
-    //     </li>
-    //   ))}
-    // </ul>
   );
 };
 

@@ -1,7 +1,19 @@
 import OrderData from "../../components/orders/order-data";
-
+import Head from "next/head";
 const Orders = () => {
-  return <OrderData />;
+  return (
+    <>
+      <Head>
+        <title>PizzRack Pizza Restaurant</title>
+        <meta
+          name="description"
+          content="Want to know if the delicious pizza you ordered is ready? Find out the status of your orders."
+        />
+        <link rel="icon" href="/pizza_snack_icon.svg" />
+      </Head>
+      <OrderData />
+    </>
+  );
 };
 
 export default Orders;

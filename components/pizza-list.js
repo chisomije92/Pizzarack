@@ -6,9 +6,9 @@ const PizzaList = ({ pizzaList }) => {
     <section className={classes.container}>
       <h1 className={classes.title}>THE BEST PIZZA IN TOWN</h1>
       <p className={classes.desc}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut blandit arcu
-        in pretium molestie. Interdum et malesuada fames acme. Lorem ipsum dolor
-        sit amet, consectetur adipiscing elit.
+        Enjoy nothing but the best of pizzas that you definitely deserve.
+        Experience the happiness obtained from the tasty deliciousness of
+        PizzaRack`s Pizzas and the guarantee of delight.
       </p>
       <div className={classes.wrapper}>
         {pizzaList.map((pizza) => (

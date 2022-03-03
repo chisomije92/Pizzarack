@@ -7,9 +7,11 @@ import PizzaList from "../components/pizza-list";
 import { useState } from "react";
 import AddButton from "../components/add/add-button";
 import Add from "../components/add/add";
-// let phoneNumber;
+
 export default function Home({ pizzaList, admin }) {
   const [close, setClose] = useState(true);
+
+  const pizzaArr = [pizzaList[0], pizzaList[1], pizzaList[2]];
   return (
     <div>
       <Head>
@@ -22,14 +24,13 @@ export default function Home({ pizzaList, admin }) {
       </Head>
       <Featured />
       {admin && <AddButton setClose={setClose} />}
-      <PizzaList pizzaList={pizzaList} />
+      <PizzaList pizzaList={pizzaArr} />
       {!close && <Add setClose={setClose} />}
     </div>
   );
 }
 
 export const getServerSideProps = async (ctx) => {
-  // phoneNumber = +2348135069250;
   const myCookie = ctx.req?.cookies || "";
   let admin = false;
 
@@ -38,7 +39,7 @@ export const getServerSideProps = async (ctx) => {
   }
   await dbConnect();
   const data = await Product.find();
-  // console.log(phoneNumber);
+
   return {
     props: {
       pizzaList: JSON.parse(JSON.stringify(data)),
