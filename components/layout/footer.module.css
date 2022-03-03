@@ -27,8 +27,14 @@
   color: #b7903c;
 }
 
-.text {
+.text,
+.textLink {
   color: lightgray;
+}
+
+.textLink {
+  font-size: 1.3rem;
+  color: rgb(243, 131, 228);
 }
 
 .motto {

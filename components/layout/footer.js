@@ -1,5 +1,6 @@
 import classes from "./footer.module.css";
 import Image from "next/image";
+import Link from "next/link";
 const Footer = () => {
   return (
     <footer className={classes.footer}>
@@ -30,8 +31,11 @@ const Footer = () => {
             <br /> ABUJA, 110012
             <br /> (234) 20772917
           </p>
+          <p className={classes.textLink}>
+            <Link href={"/"}>View all our stores...</Link>
+          </p>
 
-          <p className={classes.text}>
+          {/* <p className={classes.text}>
             1774 CHARLES STREET.
             <br /> IMO, 110088
             <br /> (234) 20882917
@@ -41,7 +45,7 @@ const Footer = () => {
             1774 GRACE AVENUE.
             <br /> KADUNA, 110889
             <br /> (234) 30799917
-          </p>
+          </p> */}
         </div>
         <div className={classes.card}>
           <h1 className={classes.title}>WORKING HOURS</h1>
