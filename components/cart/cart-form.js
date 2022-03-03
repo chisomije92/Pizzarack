@@ -86,8 +86,11 @@ const CartForm = ({ setShowModal }) => {
           />
         </div>
         <div className={classes.item}>
-          <label className={classes.label}>EMAIL</label>
+          <label className={classes.label} htmlFor="email">
+            EMAIL
+          </label>
           <input
+            id="email"
             type="email"
             placeholder="Enter Email"
             className={classes.input}
@@ -97,8 +100,11 @@ const CartForm = ({ setShowModal }) => {
           />
         </div>
         <div className={classes.item}>
-          <label className={classes.label}>ADDRESS</label>
+          <label className={classes.label} htmlFor="address">
+            ADDRESS
+          </label>
           <input
+            id="address"
             type="text"
             placeholder="Enter Address"
             className={classes.input}
@@ -109,8 +115,11 @@ const CartForm = ({ setShowModal }) => {
         </div>
 
         <div className={classes.item}>
-          <label className={classes.label}>Phone Number</label>
+          <label className={classes.label} htmlFor="phone">
+            Phone Number
+          </label>
           <input
+            id="phone"
             type="number"
             placeholder="Enter Phone Number"
             className={classes.input}
