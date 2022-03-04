@@ -17,6 +17,15 @@
   position: relative;
 }
 
+.noOrders {
+  font-size: 1.7rem;
+  color: rgb(105, 4, 17);
+}
+
+.noOrders a {
+  color: rgb(11, 112, 206);
+}
+
 .table {
   width: 100%;
   border-spacing: 20px;

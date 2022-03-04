@@ -1,5 +1,6 @@
 import classes from "./nav-list.module.css";
 import { motion } from "framer-motion";
+import Link from "next/link";
 const MobileList = (props) => {
   const animateFrom = { opacity: 0, y: -40 };
   const animateTo = { opacity: 1, y: 0 };
@@ -14,7 +15,7 @@ const MobileList = (props) => {
         className={classes.listItem}
         onClick={props.onClick}
       >
-        Homepage
+        <Link href={"/"}>Homepage</Link>
       </motion.li>
 
       <motion.li
@@ -25,7 +26,7 @@ const MobileList = (props) => {
         className={classes.listItem}
         onClick={props.onClick}
       >
-        Products
+        <Link href={"/menu"}>Menu</Link>
       </motion.li>
       <motion.li
         initial={animateFrom}
@@ -35,7 +36,7 @@ const MobileList = (props) => {
         className={classes.listItem}
         onClick={props.onClick}
       >
-        Cart
+        <Link href={"/cart"}>Cart</Link>
       </motion.li>
 
       <motion.li
@@ -46,7 +47,7 @@ const MobileList = (props) => {
         className={classes.listItem}
         onClick={props.onClick}
       >
-        Events
+        <Link href={"/orders"}>Tracker</Link>
       </motion.li>
       <motion.li
         initial={animateFrom}
@@ -56,17 +57,7 @@ const MobileList = (props) => {
         className={classes.listItem}
         onClick={props.onClick}
       >
-        Blog
-      </motion.li>
-      <motion.li
-        initial={animateFrom}
-        animate={animateTo}
-        exit={animateFrom}
-        transition={{ delay: 0.3 }}
-        className={classes.listItem}
-        onClick={props.onClick}
-      >
-        Contact
+        <Link href={"/stores"}>Stores</Link>
       </motion.li>
     </ul>
   );

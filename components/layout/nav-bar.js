@@ -5,13 +5,23 @@ import NavList from "./nav-list";
 import { CgMenu } from "react-icons/cg";
 import { CgCloseR } from "react-icons/cg";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import Link from "next/link";
 
 const NavBar = () => {
   const quantity = useSelector((state) => state.cart.quantity);
   const [open, setOpen] = useState(false);
+
+  const [isLoaded, setLoaded] = useState(null);
+
+  useEffect(() => {
+    setLoaded(true);
+  }, []);
+
+  if (!isLoaded) {
+    return null;
+  }
 
   const hamburgerIcon = (
     <CgMenu

@@ -3,6 +3,7 @@ import classes from "./cart-form.module.css";
 import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
 import { PaystackButton } from "react-paystack";
+import { motion } from "framer-motion";
 const CartForm = ({ setShowModal }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -67,8 +68,18 @@ const CartForm = ({ setShowModal }) => {
     },
   };
 
+  const animateFrom = { opacity: 0, y: -40 };
+  const animateTo = { opacity: 1, y: 0 };
+
   return (
-    <div className={classes.container}>
+    <motion.div
+      className={classes.container}
+      key="motion"
+      initial={animateFrom}
+      animate={animateTo}
+      transition={{ delay: 0.04 }}
+      exit={animateFrom}
+    >
       <div className={classes.item}>
         <h3>CHECKOUT FORM</h3>
       </div>
@@ -135,7 +146,7 @@ const CartForm = ({ setShowModal }) => {
           <PaystackButton className={classes.button} {...componentProps} />
         )}
       </form>
-    </div>
+    </motion.div>
   );
 };
 

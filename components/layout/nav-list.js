@@ -1,15 +1,25 @@
-import Image from "next/image";
+import Link from "next/link";
 import classes from "./nav-list.module.css";
 
 const NavList = (props) => {
   return (
     <ul className={props.className}>
-      <li className={classes.listItem}>Homepage</li>
-      <li className={classes.listItem}>Products</li>
-      <li className={classes.listItem}>Cart</li>
-      <li className={classes.listItem}>Events</li>
-      <li className={classes.listItem}>Blog</li>
-      <li className={classes.listItem}>Contact</li>
+      <li className={classes.listItem}>
+        <Link href={"/"}>Homepage</Link>
+      </li>
+      <li className={classes.listItem}>
+        <Link href={"/menu"}>Menu</Link>
+      </li>
+      <li className={classes.listItem}>
+        <Link href={"/cart"}>Cart</Link>
+      </li>
+      <li className={classes.listItem}>
+        <Link href={"/orders"}>Tracker</Link>
+      </li>
+
+      <li className={classes.listItem}>
+        <Link href={"/stores"}>Stores</Link>
+      </li>
     </ul>
   );
 };
