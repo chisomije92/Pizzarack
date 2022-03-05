@@ -20,7 +20,7 @@
 }
 
 .errorWrapper div:nth-child(2) {
-  font-weight: 400;
+  font-weight: 610;
   animation: move 1s linear 0.1s infinite alternate;
 }
 
