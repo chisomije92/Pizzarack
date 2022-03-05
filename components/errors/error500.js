@@ -16,7 +16,7 @@ const Error500 = () => {
           <Link href="/">
             <a>home</a>
           </Link>{" "}
-          and find your way.
+          to find your way again.
         </p>
       </div>
     </section>

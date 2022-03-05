@@ -12,9 +12,12 @@
 }
 
 .imageContainer {
-  width: 100px;
-  height: 100px;
+  min-width: 12vw;
+  height: 12vh;
   position: relative;
+
+  display: flex;
+  justify-content: center;
 }
 
 .noOrders {
@@ -29,8 +32,20 @@
 .table {
   width: 100%;
   border-spacing: 20px;
+  /* display: flex;
+  flex-direction: column; */
+}
+.table thead {
+  /* background-color: red; */
+
+  text-align: center;
 }
 
+.table tbody {
+  /* background-color: red; */
+  /* transform: translateX(29px); */
+  text-align: center;
+}
 .name {
   font-weight: 500;
   color: #dd3939;
@@ -58,8 +73,7 @@
   margin-right: 10px;
 }
 
-.button,
-.paidButton {
+.button {
   height: 40px;
   color: #dd3939;
   font-weight: bold;
@@ -67,8 +81,8 @@
   margin-top: 20px;
 }
 
-.paidButton {
-  color: green;
+.button:disabled {
+  cursor: not-allowed;
 }
 
 @media screen and (max-width: 833px) {

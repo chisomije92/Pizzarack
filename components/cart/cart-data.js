@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
 import Link from "next/link";
 import CartModal from "./cart-modal";
-import { AnimatePresence } from "framer-motion";
+
 const CartData = () => {
   const [showModal, setShowModal] = useState(false);
   const cart = useSelector((state) => state.cart);
@@ -52,7 +52,7 @@ const CartData = () => {
                       <Image
                         src={product.img}
                         layout="fill"
-                        objectFit="cover"
+                        objectFit="contain"
                         alt="pizza"
                       />
                     </div>
@@ -61,11 +61,13 @@ const CartData = () => {
                     <span className={classes.name}>{product.title}</span>
                   </td>
                   <td>
-                    <span className={classes.extras}>
-                      {product.extras.map((extra) => (
-                        <span key={extra._id}>{extra.text}, </span>
-                      ))}
-                    </span>
+                    {/* <span > */}
+                    {product.extras.map((extra) => (
+                      <span key={extra._id} className={classes.extras}>
+                        {extra.text},{" "}
+                      </span>
+                    ))}
+                    {/* </span> */}
                   </td>
                   <td>
                     <span className={classes.price}>₦{product.price}</span>

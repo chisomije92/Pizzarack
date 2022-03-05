@@ -39,6 +39,11 @@
   margin-top: 20px;
 }
 
+.item h3 {
+  font-size: 1.7rem;
+  border-bottom: 2px solid rgb(197, 22, 22);
+}
+
 .item:first-child {
   flex: 1;
   color: antiquewhite;

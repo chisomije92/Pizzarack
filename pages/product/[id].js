@@ -27,22 +27,19 @@ export const getServerSideProps = async ({ params }) => {
   if (!mongoose.Types.ObjectId.isValid(id)) {
     return {
       redirect: {
-        permanent: false,
         destination: "/500",
+        permanent: false,
       },
     };
   }
   await dbConnect();
   const data = await Product.findById(id);
 
-  // if (!data) {
-  //   return {
-  //     redirect: {
-  //       permanent: false,
-  //       destination: "/404",
-  //     },
-  //   };
-  // }
+  if (!data) {
+    return {
+      notFound: true,
+    };
+  }
 
   return {
     props: {

@@ -15,7 +15,7 @@ const MobileList = (props) => {
         className={classes.listItem}
         onClick={props.onClick}
       >
-        <Link href={"/"}>Homepage</Link>
+        <Link href={"/"}>Home</Link>
       </motion.li>
 
       <motion.li

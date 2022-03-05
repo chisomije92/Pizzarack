@@ -1,6 +1,7 @@
 import OrderItem from "../../components/orders/order-item";
 import Order from "../../models/Order";
 import dbConnect from "../../lib/mongo";
+import mongoose from "mongoose";
 import Head from "next/head";
 const OrderPage = ({ order }) => {
   return (
@@ -20,10 +21,21 @@ const OrderPage = ({ order }) => {
 
 export const getServerSideProps = async ({ params }) => {
   const id = params.id;
-
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return {
+      redirect: {
+        destination: "/500",
+        permanent: false,
+      },
+    };
+  }
   await dbConnect();
   const data = await Order.findById(id);
-
+  if (!data) {
+    return {
+      notFound: true,
+    };
+  }
   return {
     props: {
       order: JSON.parse(JSON.stringify(data)),
