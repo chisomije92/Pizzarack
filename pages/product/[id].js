@@ -1,5 +1,6 @@
 import ProductItem from "../../components/product/product-item";
 import dbConnect from "../../lib/mongo";
+import mongoose from "mongoose";
 import Product from "../../models/Product";
 import Head from "next/head";
 
@@ -23,9 +24,25 @@ export default ProductPage;
 
 export const getServerSideProps = async ({ params }) => {
   const id = params.id;
-
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return {
+      redirect: {
+        permanent: false,
+        destination: "/404",
+      },
+    };
+  }
   await dbConnect();
   const data = await Product.findById(id);
+
+  // if (!data) {
+  //   return {
+  //     redirect: {
+  //       permanent: false,
+  //       destination: "/404",
+  //     },
+  //   };
+  // }
 
   return {
     props: {

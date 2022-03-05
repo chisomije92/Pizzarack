@@ -1,0 +1,53 @@
+.container {
+  background-color: #95c2de;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 60vh;
+}
+
+.errorWrapper {
+  color: rgb(231, 75, 75);
+  display: flex;
+  margin-top: 22px;
+}
+
+.errorWrapper div {
+  min-width: 6vw;
+  font-size: 9rem;
+  font-weight: 700;
+}
+
+.errorWrapper div:nth-child(2) {
+  font-weight: 400;
+  animation: move 1s linear 0.1s infinite alternate;
+}
+
+@keyframes move {
+  from {
+    transform: translateY(-14px);
+  }
+  to {
+    transform: translateY(25px);
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.35rem;
+  text-align: center;
+  color: rgb(39, 39, 51);
+}
+
+.content a {
+  color: white;
+}
+
+.content a:hover {
+  color: black;
+  border-bottom: 1px solid white;
+}
