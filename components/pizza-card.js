@@ -18,7 +18,7 @@ const PizzaCard = ({ pizza }) => {
         </Link>
       </div>
       <h1 className={classes.title}>{pizza.title}</h1>
-      <span className={classes.price}>{`${pizza.prices[0]}`}</span>
+      <span className={classes.price}>{`₦${pizza.prices[0]}`}</span>
       <p className={classes.desc}>{pizza.desc}</p>
     </div>
   );

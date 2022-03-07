@@ -23,6 +23,7 @@
 .noOrders {
   font-size: 1.7rem;
   color: rgb(105, 4, 17);
+  margin-left: 12px;
 }
 
 .noOrders a {

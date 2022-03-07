@@ -12,8 +12,26 @@ import Link from "next/link";
 const NavBar = () => {
   const quantity = useSelector((state) => state.cart.quantity);
   const [open, setOpen] = useState(false);
+  const [cartIsHighlighted, setCartIsHighlighted] = useState(false);
 
   const [isLoaded, setLoaded] = useState(null);
+
+  const cartClass = `${classes.cart} ${cartIsHighlighted ? classes.bump : ""}`;
+
+  useEffect(() => {
+    if (quantity.length === 0) {
+      return;
+    }
+    setCartIsHighlighted(true);
+
+    const timer = setTimeout(() => {
+      setCartIsHighlighted(false);
+    }, 300);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [quantity]);
 
   useEffect(() => {
     setLoaded(true);
@@ -76,7 +94,7 @@ const NavBar = () => {
       </AnimatePresence>
       <Link href={"/cart"} passHref>
         <div className={classes.item}>
-          <div className={classes.cart}>
+          <div className={cartClass}>
             <Image
               src="/images/cart.svg"
               alt="cart"

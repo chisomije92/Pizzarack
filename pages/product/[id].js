@@ -1,7 +1,8 @@
 import ProductItem from "../../components/product/product-item";
 import Product from "../../models/Product";
 import Head from "next/head";
-import getPizzaItemsById from "../../lib/helpers";
+import mongoose from "mongoose";
+import dbConnect from "../../lib/mongo";
 
 const ProductPage = ({ pizza }) => {
   return (
@@ -23,7 +24,21 @@ export default ProductPage;
 
 export const getServerSideProps = async ({ params }) => {
   const id = params.id;
-  const data = await getPizzaItemsById(id, Product);
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return {
+      redirect: {
+        destination: "/500",
+        permanent: false,
+      },
+    };
+  }
+  await dbConnect();
+  const data = await Product.findById(id);
+  if (!data) {
+    return {
+      notFound: true,
+    };
+  }
 
   return {
     props: {

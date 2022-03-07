@@ -1,5 +1,7 @@
 import OrderItem from "../../components/orders/order-item";
 import Order from "../../models/Order";
+import mongoose from "mongoose";
+import dbConnect from "../../lib/mongo";
 import Head from "next/head";
 import getPizzaItemsById from "../../lib/helpers";
 const OrderPage = ({ order }) => {
@@ -20,7 +22,22 @@ const OrderPage = ({ order }) => {
 
 export const getServerSideProps = async ({ params }) => {
   const id = params.id;
-  const data = await getPizzaItemsById(id, Order);
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return {
+      redirect: {
+        destination: "/500",
+        permanent: false,
+      },
+    };
+  }
+
+  await dbConnect();
+  const data = await Order.findById(id);
+  if (!data) {
+    return {
+      notFound: true,
+    };
+  }
   return {
     props: {
       order: JSON.parse(JSON.stringify(data)),

@@ -127,7 +127,7 @@ const CartForm = ({ setShowModal }) => {
 
         <div className={classes.item}>
           <label className={classes.label} htmlFor="phone">
-            Phone Number
+            PHONE NUMBER
           </label>
           <input
             id="phone"

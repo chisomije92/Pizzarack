@@ -10,10 +10,6 @@ function MyApp({ Component, pageProps }) {
       <Layout>
         <Head>
           <title>PizzRack Pizza Restaurant</title>
-          <meta
-            name="viewport"
-            contents="initial-scale=1.0, width=device-width"
-          />
           <link rel="icon" href="/pizza_snack_icon.svg" />
         </Head>
         <Component {...pageProps} />
