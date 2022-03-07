@@ -61,13 +61,11 @@ const CartData = () => {
                     <span className={classes.name}>{product.title}</span>
                   </td>
                   <td>
-                    {/* <span > */}
                     {product.extras.map((extra) => (
                       <span key={extra._id} className={classes.extras}>
                         {extra.text},{" "}
                       </span>
                     ))}
-                    {/* </span> */}
                   </td>
                   <td>
                     <span className={classes.price}>₦{product.price}</span>

@@ -80,8 +80,8 @@ const NavBar = () => {
             <Image
               src="/images/cart.svg"
               alt="cart"
-              width="30px"
-              height="30px"
+              width="40px"
+              height="40px"
             />
             <div className={classes.counter}>{quantity}</div>
           </div>

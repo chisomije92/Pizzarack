@@ -39,6 +39,11 @@ export const getServerSideProps = async (ctx) => {
   }
   await dbConnect();
   const data = await Product.find();
+  if (!data) {
+    return {
+      notFound: true,
+    };
+  }
 
   return {
     props: {
