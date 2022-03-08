@@ -3,7 +3,7 @@ import Order from "../../models/Order";
 import mongoose from "mongoose";
 import dbConnect from "../../lib/mongo";
 import Head from "next/head";
-import getPizzaItemsById from "../../lib/helpers";
+
 const OrderPage = ({ order }) => {
   return (
     <>

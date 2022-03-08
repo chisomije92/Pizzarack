@@ -21,9 +21,9 @@ const MenuData = ({ pizzaList }) => {
           >
             <div>
               <Image
-                src="/images/pizza.png"
+                src={pizza.img}
                 alt="pizza pic"
-                width="94px"
+                width="99px"
                 height="94px"
               />
             </div>
