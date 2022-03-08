@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import { useState } from "react";
 import classes from "./order-data.module.css";
+import Spinner from "../UI/spinner";
 
 const OrderData = () => {
   const [selectedOrders, setSelectedOrders] = useState([]);
@@ -26,18 +27,18 @@ const OrderData = () => {
   const noOrders = (
     <p className={classes.noOrders}>You have no pending order</p>
   );
-  const loading = (
-    <div className={classes["lds-roller"]}>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  );
+  // const loading = (
+  //   <div className={classes["lds-roller"]}>
+  //     <div></div>
+  //     <div></div>
+  //     <div></div>
+  //     <div></div>
+  //     <div></div>
+  //     <div></div>
+  //     <div></div>
+  //     <div></div>
+  //   </div>
+  // );
   const inputError = <p className={classes.error}>Invalid values</p>;
 
   const tableContent = (
@@ -142,7 +143,7 @@ const OrderData = () => {
       </div>
       <div className={classes.item}>
         <h1 className={classes.title}>Your Order(s)</h1>
-        {isLoading && loading}
+        {isLoading && <Spinner />}
         {!isFirstLoad &&
           selectedOrders.length === 0 &&
           isInputValid &&

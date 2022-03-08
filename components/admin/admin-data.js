@@ -70,9 +70,9 @@ const AdminData = ({ orders, products }) => {
                 <td>
                   <Image
                     src={product.img}
-                    width={50}
-                    height={50}
-                    objectFit="cover"
+                    width={100}
+                    height={100}
+                    objectFit="contain"
                     alt="pizza"
                   />
                 </td>
