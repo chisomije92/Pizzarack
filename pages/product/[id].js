@@ -8,7 +8,7 @@ const ProductPage = ({ pizza }) => {
   return (
     <>
       <Head>
-        <title>PizzRack Pizza Restaurant</title>
+        <title> {pizza.title} </title>
         <meta
           name="description"
           content="PizzaRack makes and deliver the best pizzas. Get delicious pizza conveniently, anytime and anywhere"

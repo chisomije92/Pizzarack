@@ -12,16 +12,18 @@
 }
 
 .close {
+  width: 32px;
   color: black;
-  font-size: 2rem;
-  transform: translateY(-14rem);
-  margin-right: 4px;
+  text-align: center;
+  font-size: 1.7rem;
+  transform: translate(0.3rem, -14.7rem);
   cursor: pointer;
+  border-radius: 50%;
 }
 
 .container {
   background-color: rgb(104, 104, 104);
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .form {

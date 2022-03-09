@@ -140,7 +140,9 @@ const CartForm = ({ setShowModal }) => {
           />
         </div>
         {!isValid && (
-          <button className={classes.buttonMod}>ENTER DETAILS!</button>
+          <button className={classes.buttonMod} disabled>
+            ENTER DETAILS!
+          </button>
         )}
         {isValid && (
           <PaystackButton className={classes.button} {...componentProps} />

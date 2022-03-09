@@ -4,7 +4,7 @@ const Orders = () => {
   return (
     <>
       <Head>
-        <title>PizzRack Pizza Restaurant</title>
+        <title>Find out Order Status </title>
         <meta
           name="description"
           content="Want to know if the delicious pizza you ordered is ready? Find out the status of your orders."

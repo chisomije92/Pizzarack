@@ -2,9 +2,20 @@ import AdminData from "../../components/admin/admin-data";
 import dbConnect from "../../lib/mongo";
 import Product from "../../models/Product";
 import Order from "../../models/Order";
+import Add from "../../components/add/add";
+import AddButton from "../../components/add/add-button";
+import { useState } from "react";
 
 const AdminPage = ({ orders, products }) => {
-  return <AdminData orders={orders} products={products} />;
+  const [close, setClose] = useState(true);
+
+  return (
+    <>
+      <AddButton setClose={setClose} />
+      {!close && <Add setClose={setClose} />}
+      <AdminData orders={orders} products={products} />
+    </>
+  );
 };
 
 export const getServerSideProps = async (ctx) => {

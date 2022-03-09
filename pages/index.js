@@ -4,18 +4,30 @@ import Product from "../models/Product";
 import Featured from "../components/featured";
 
 import PizzaList from "../components/pizza-list";
-import { useState } from "react";
-import AddButton from "../components/add/add-button";
-import Add from "../components/add/add";
+import { useEffect, useMemo, useState } from "react";
 
-export default function Home({ pizzaList, admin }) {
-  const [close, setClose] = useState(true);
+export default function Home({ pizzaList }) {
+  const [pizzaArr, setPizzaArr] = useState([]);
+  const pizzaArray = useMemo(
+    () => [pizzaList[0], pizzaList[1], pizzaList[2]],
+    [pizzaList]
+  );
 
-  const pizzaArr = [pizzaList[0], pizzaList[1], pizzaList[2]];
+  useEffect(() => {
+    pizzaArray.forEach((item, index, arr) => {
+      if (!item) {
+        pizzaArray.splice(index, 1);
+        setPizzaArr(arr);
+      }
+    });
+
+    setPizzaArr(pizzaArray);
+  }, [pizzaArr, pizzaList, pizzaArray]);
+
   return (
     <div>
       <Head>
-        <title>PizzRack Pizza Restaurant</title>
+        <title>Pizza Rack Pizzas</title>
         <meta
           name="description"
           content="PizzaRack makes and deliver the best pizzas. Get delicious pizza conveniently, anytime and anywhere"
@@ -23,20 +35,13 @@ export default function Home({ pizzaList, admin }) {
         <link rel="icon" href="/pizza_snack_icon.svg" />
       </Head>
       <Featured />
-      {admin && <AddButton setClose={setClose} />}
+
       <PizzaList pizzaList={pizzaArr} />
-      {!close && <Add setClose={setClose} />}
     </div>
   );
 }
 
-export const getServerSideProps = async (ctx) => {
-  const myCookie = ctx.req?.cookies || "";
-  let admin = false;
-
-  if (myCookie.token === process.env.TOKEN) {
-    admin = true;
-  }
+export const getServerSideProps = async () => {
   await dbConnect();
   const data = await Product.find();
   if (!data) {
@@ -48,7 +53,6 @@ export const getServerSideProps = async (ctx) => {
   return {
     props: {
       pizzaList: JSON.parse(JSON.stringify(data)),
-      admin,
     },
   };
 };

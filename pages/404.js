@@ -4,7 +4,7 @@ export default function Custom404() {
   return (
     <>
       <Head>
-        <title>PizzRack Pizza Restaurant</title>
+        <title>Pizza Rack Pizzas</title>
         <link rel="icon" href="/pizza_snack_icon.svg" />
       </Head>
       <Error404 />

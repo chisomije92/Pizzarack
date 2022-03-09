@@ -4,7 +4,7 @@ const Stores = () => {
   return (
     <>
       <Head>
-        <title>PizzRack Pizza Restaurant</title>
+        <title>Pizza Rack Pizzas - Locations</title>
         <meta
           name="description"
           content="Pizza Rack presents to you the wide choices of delicious pizza. Make a pick now and satisfy you unfulfilled desire."

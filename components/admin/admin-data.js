@@ -51,82 +51,85 @@ const AdminData = ({ orders, products }) => {
     }
   };
   return (
-    <section className={classes.container}>
-      <div className={classes.item}>
-        <h1 className={classes.title}>Products</h1>
-        <table className={classes.table}>
-          <thead>
-            <tr className={classes.trTitle}>
-              <th>Image</th>
-              <th>Id</th>
-              <th>Title</th>
-              <th>Price</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          {pizzaList.map((product) => (
-            <tbody key={product._id}>
+    <>
+      <section className={classes.container}>
+        <div></div>
+        <div className={classes.item}>
+          <h1 className={classes.title}>Products</h1>
+          <table className={classes.table}>
+            <thead className={classes.tHead}>
               <tr className={classes.trTitle}>
-                <td>
-                  <Image
-                    src={product.img}
-                    width={100}
-                    height={100}
-                    objectFit="contain"
-                    alt="pizza"
-                  />
-                </td>
-                <td>{product._id.slice(0, 5)}...</td>
-                <td>{product.title}</td>
-                <td>{product.prices[0]}</td>
-                <td>
-                  <button className={classes.button}>Edit</button>
-                  <button
-                    className={classes.button}
-                    onClick={() => deleteHandler(product._id)}
-                  >
-                    Delete
-                  </button>
-                </td>
+                <th>Image</th>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Action</th>
               </tr>
-            </tbody>
-          ))}
-        </table>
-      </div>
+            </thead>
+            {pizzaList.map((product) => (
+              <tbody key={product._id}>
+                <tr className={classes.trTitle}>
+                  <td>
+                    <Image
+                      src={product.img}
+                      width={100}
+                      height={100}
+                      objectFit="contain"
+                      alt="pizza"
+                    />
+                  </td>
+                  <td>{product._id.slice(0, 5)}...</td>
+                  <td>{product.title}</td>
+                  <td>{product.prices[0]}</td>
+                  <td>
+                    <button className={classes.button}>Edit</button>
+                    <button
+                      className={classes.button}
+                      onClick={() => deleteHandler(product._id)}
+                    >
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            ))}
+          </table>
+        </div>
 
-      <div className={classes.item}>
-        <h1 className={classes.title}>Orders</h1>
-        <table className={classes.table}>
-          <thead>
-            <tr className={classes.trTitle}>
-              <th>Id</th>
-              <th>Customer</th>
-              <th>Total</th>
-              <th>Payment Method</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          {ordersList.map((order) => (
-            <tbody key={order._id}>
+        <div className={classes.item}>
+          <h1 className={classes.title}>Orders</h1>
+          <table className={classes.table}>
+            <thead className={classes.tHead}>
               <tr className={classes.trTitle}>
-                <td>{order._id.slice(0, 5)}...</td>
-                <td>{order.customer}</td>
-                <td>₦{order.total}</td>
-                <td>
-                  {order.method === 0 ? <span>cash</span> : <span>paid</span>}
-                </td>
-                <td>{status[order.status]}</td>
-                <td>
-                  <button onClick={statusHandler.bind(null, order._id)}>
-                    Next Stage
-                  </button>
-                </td>
+                <th>Id</th>
+                <th>Customer</th>
+                <th>Total</th>
+                <th>Payment Method</th>
+                <th>Action</th>
               </tr>
-            </tbody>
-          ))}
-        </table>
-      </div>
-    </section>
+            </thead>
+            {ordersList.map((order) => (
+              <tbody key={order._id}>
+                <tr className={classes.trTitle}>
+                  <td>{order._id.slice(0, 5)}...</td>
+                  <td>{order.customer}</td>
+                  <td>₦{order.total}</td>
+                  <td>
+                    {order.method === 0 ? <span>cash</span> : <span>paid</span>}
+                  </td>
+                  <td>{status[order.status]}</td>
+                  <td>
+                    <button onClick={statusHandler.bind(null, order._id)}>
+                      Next Stage
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            ))}
+          </table>
+        </div>
+      </section>
+    </>
   );
 };
 

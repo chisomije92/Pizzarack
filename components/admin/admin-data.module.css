@@ -8,7 +8,7 @@
 }
 
 .table {
-  width: 100%;
+  min-width: 100%;
   border-spacing: 20px;
   text-align: left;
 }
@@ -27,4 +27,30 @@
 
 .button:last-child {
   background-color: crimson;
+}
+
+@media screen and (max-width: 967px) {
+  .container {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 577px) {
+  .table {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+
+  .tHead {
+    display: none;
+  }
+  .trTitle {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .trTitle {
+    margin-top: 20px;
+  }
 }

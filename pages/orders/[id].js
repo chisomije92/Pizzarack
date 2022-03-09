@@ -8,7 +8,7 @@ const OrderPage = ({ order }) => {
   return (
     <>
       <Head>
-        <title>PizzRack Pizza Restaurant</title>
+        <title>Order Status</title>
         <meta
           name="description"
           content="PizzaRack makes and deliver the best pizzas. Get delicious pizza conveniently, anytime and anywhere"

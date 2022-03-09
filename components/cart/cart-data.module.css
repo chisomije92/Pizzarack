@@ -33,18 +33,12 @@
 .table {
   width: 100%;
   border-spacing: 20px;
-  /* display: flex;
-  flex-direction: column; */
 }
 .table thead {
-  /* background-color: red; */
-
   text-align: center;
 }
 
 .table tbody {
-  /* background-color: red; */
-  /* transform: translateX(29px); */
   text-align: center;
 }
 .name {

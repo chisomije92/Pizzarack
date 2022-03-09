@@ -7,8 +7,8 @@ const PizzaList = ({ pizzaList }) => {
       <h1 className={classes.title}>THE BEST PIZZA IN TOWN</h1>
       <p className={classes.desc}>
         Enjoy nothing but the best of pizzas that you definitely deserve.
-        Experience the happiness obtained from the tasty deliciousness of
-        PizzaRack`s Pizzas and the guarantee of delight.
+        Experience the happiness obtained from the tasty deliciousness of Pizza
+        Rack`s Pizzas and the guarantee of delight.
       </p>
       <div className={classes.wrapper}>
         {pizzaList.map((pizza) => (
