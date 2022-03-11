@@ -97,7 +97,6 @@ const OrderData = () => {
       let data = await response.json();
       setSelectedOrders(data);
       setIsLoading(false);
-      console.log(data);
     } catch (err) {
       console.log(err);
     }

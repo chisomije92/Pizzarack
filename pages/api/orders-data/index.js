@@ -12,7 +12,6 @@ const handler = async (req, res) => {
       .clone()
       .catch((err) => console.log(err));
 
-    // console.log(order);
     res.status(201).json(order);
   }
 };
