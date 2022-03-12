@@ -12,8 +12,12 @@ const handler = (req, res) => {
         "Set-Cookie",
         cookie.serialize("token", process.env.token, {
           maxAge: 60 * 60,
-          sameSite: "none",
+          sameSite: "lax",
           path: "/",
+          domain:
+            process.env.NODE_ENV === "development"
+              ? "localhost"
+              : ".vercel.app",
         })
       );
       res.status(200).json("Successful");
