@@ -1,34 +1,65 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Pizza Rack Order App
 
-## Getting Started
+This web app enables users to purchase pizzas via the platform. Users are presented with a menu consisting of various pizzas and different prices and additional toppings for each pizza. Also, the users are given the option of tracking the order(s) they made with the view of knowing the status.
 
-First, run the development server:
+## Table of contents
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+- [Pizza Rack Order App](#pizza-rack-order-app)
+  - [Table of contents](#table-of-contents)
+  - [Overview](#overview)
+    - [Links](#links)
+    - [Admin](#admin)
+  - [My process](#my-process)
+    - [Built with](#built-with)
+    - [What I learned](#what-i-learned)
+  - [Credits](#credits)
+  - [Author](#author)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Overview
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+### Links
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+- Repo: [Github repo](https://github.com/chisomije92/pizza-order-app)
+- Live Site URL: [Vercel Web Url](https://pizzarack.vercel.app/)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### Admin
 
-## Learn More
+- Admin Dashboard: [Admin Dashboard](https://pizzarack.vercel.app/admin)
+  The admin dashboard enables the admin user to add and delete pizzas. In addition, the admin user can track and change order status.
 
-To learn more about Next.js, take a look at the following resources:
+## My process
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Built with
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Semantic HTML5 markup
+- Flexbox
+- [Css Modules](https://create-react-app.dev/docs/adding-a-css-modules-stylesheet/) - For styles
+- [React](https://reactjs.org/) - JS library
+- [NextJS](https://nextjs.org/) - React framework
+- [React Redux](https://react-redux.js.org/) - React redux
+- [Framer Motion](https://www.framer.com/motion/) - Framer motion
+- [Mongoose](https://mongoosejs.com/) - Mongoose
 
-## Deploy on Vercel
+### What I learned
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+I gained knowledge and practical experience with the use of the following:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- API routes
+- Server-side rendering
+- Mongoose models, schemas etc
+- Express JS
+- Uploading file data to Cloudinary
+
+## Credits
+
+My implementation of this project was possible thanks to the knowledge acquired from the courses below:
+
+- [React - The Complete Guide (incl Hooks, React Router, Redux)](https://www.udemy.com/course/react-the-complete-guide-incl-redux/)
+- [Next.js & React - The Complete Guide (incl. Two Paths!)](https://www.udemy.com/course/nextjs-react-the-complete-guide/)
+
+## Author
+
+**Chisom Ijeomah**
+
+- GitHub - [chisomije92](https://github.com/chisomije92)
+- Twitter - [@devManiac92](https://www.twitter.com/@devManiac92)
