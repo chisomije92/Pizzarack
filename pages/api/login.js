@@ -12,7 +12,7 @@ const handler = (req, res) => {
         "Set-Cookie",
         cookie.serialize("token", process.env.token, {
           maxAge: 60 * 60,
-          sameSite: "lax",
+          sameSite: "none",
           path: "/",
         })
       );
