@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps }) {
     <Provider store={store}>
       <Layout>
         <Head>
-          <title>PizzRack Pizza Pizzas</title>
+          <title>Pizza Rack Pizzas</title>
           <link rel="icon" href="/pizza_snack_icon.svg" />
         </Head>
         <Component {...pageProps} />
