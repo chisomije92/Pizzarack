@@ -14,6 +14,7 @@ const handler = (req, res) => {
           maxAge: 60 * 60,
           sameSite: "lax",
           path: "/",
+          domain: "vercel.app",
         })
       );
       res.status(200).json("Successful");
