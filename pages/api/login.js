@@ -15,9 +15,7 @@ const handler = (req, res) => {
           sameSite: "lax",
           path: "/",
           domain:
-            process.env.NODE_ENV === "development"
-              ? "localhost"
-              : ".vercel.app",
+            process.env.NODE_ENV === "development" ? "localhost" : "vercel.app",
         })
       );
       res.status(200).json("Successful");
