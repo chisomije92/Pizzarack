@@ -10,6 +10,7 @@ export default NextAuth({
     CredentialsProvider({
       async authorize(credentials) {
         if (
+          //change
           credentials.username !== "admin" ||
           credentials.password !== "00000"
         ) {
