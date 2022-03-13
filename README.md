@@ -43,6 +43,7 @@ This web app enables users to purchase pizzas via the platform. Users are presen
 - [React Redux](https://react-redux.js.org/) - React redux
 - [Framer Motion](https://www.framer.com/motion/) - Framer motion
 - [Mongoose](https://mongoosejs.com/) - Mongoose
+- [NextAuth](https://next-auth.js.org/) - NextAuth
 
 ### What I learned
 
@@ -53,6 +54,7 @@ I gained knowledge and practical experience with the use of the following:
 - Mongoose models, schemas etc
 - Express JS
 - Uploading file data to Cloudinary
+- User authentication with NextAuth
 
 ## Credits
 
