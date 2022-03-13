@@ -9,6 +9,7 @@ This web app enables users to purchase pizzas via the platform. Users are presen
   - [Overview](#overview)
     - [Links](#links)
     - [Admin](#admin)
+      - [How to](#how-to)
   - [My process](#my-process)
     - [Built with](#built-with)
     - [What I learned](#what-i-learned)
@@ -25,7 +26,10 @@ This web app enables users to purchase pizzas via the platform. Users are presen
 ### Admin
 
 - Admin Dashboard: [Admin Dashboard](https://pizzarack.vercel.app/admin)
-  The admin dashboard enables the admin user to add and delete pizzas. In addition, the admin user can track and change order status.
+  #### How to
+  The admin dashboard enables the admin user to add and delete pizzas. In addition, the admin user can track and change the status of orders. To access the dashboard, log in with the following credentials:
+  - Username: Admin
+  - Password: 00000
 
 ## My process
 
