@@ -10,9 +10,8 @@ export default NextAuth({
     CredentialsProvider({
       async authorize(credentials) {
         if (
-          //change
-          credentials.username !== "admin" ||
-          credentials.password !== "00000"
+          credentials.username !== process.env.ADMIN_USERNAME ||
+          credentials.password !== process.env.ADMIN_PASSWORD
         ) {
           throw new Error("Email/Password is invalid!");
         }
