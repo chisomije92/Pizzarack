@@ -4,10 +4,15 @@ import Product from "../../models/Product";
 import Order from "../../models/Order";
 import Add from "../../components/add/add";
 import AddButton from "../../components/add/add-button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { getSession, signOut } from "next-auth/react";
 
 const AdminPage = ({ orders, products }) => {
   const [close, setClose] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => signOut(), 3600000);
+  }, []);
 
   return (
     <>
@@ -19,9 +24,9 @@ const AdminPage = ({ orders, products }) => {
 };
 
 export const getServerSideProps = async (ctx) => {
-  const myCookie = ctx.req?.cookies || "";
+  const session = await getSession(ctx);
 
-  if (myCookie.token !== process.env.token) {
+  if (!session) {
     return {
       redirect: {
         destination: "/admin/login",
