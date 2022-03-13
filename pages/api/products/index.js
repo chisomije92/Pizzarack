@@ -1,6 +1,6 @@
 import dbConnect from "../../../lib/mongo";
 import Product from "../../../models/Product";
-
+import { getSession } from "next-auth/react";
 const handler = async (req, res) => {
   const { method, cookies } = req;
   const token = cookies.token;
@@ -15,8 +15,12 @@ const handler = async (req, res) => {
   }
 
   if (method === "POST") {
-    if (!token || token !== process.env.token) {
-      return res.status(401).json("Not authenticated!");
+    const session = await getSession({ req: req });
+    console.log(session);
+
+    if (!session) {
+      res.status(401).json({ message: "Not authenticated" });
+      return;
     }
     try {
       const product = await Product.create(req.body);

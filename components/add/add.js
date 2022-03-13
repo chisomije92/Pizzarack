@@ -87,7 +87,7 @@ const Add = ({ setClose }) => {
             />
           </div>
           <div className={classes.item}>
-            <label className={classes.label}>Choose an Image</label>
+            <label className={classes.label}>Pizza name</label>
             <input
               className={classes.input}
               type="text"
