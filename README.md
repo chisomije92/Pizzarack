@@ -37,11 +37,11 @@ This web app enables users to purchase pizzas via the platform. Users are presen
 
 - Semantic HTML5 markup
 - Flexbox
-- [Css Modules](https://create-react-app.dev/docs/adding-a-css-modules-stylesheet/) - For styles
+- [CSS Modules](https://create-react-app.dev/docs/adding-a-css-modules-stylesheet/) - For styles
 - [React](https://reactjs.org/) - JS library
 - [NextJS](https://nextjs.org/) - React framework
 - [React Redux](https://react-redux.js.org/) - React redux
-- [Framer Motion](https://www.framer.com/motion/) - Framer motion
+- [Framer Motion](https://www.framer.com/motion/) - Framer motion for animations
 - [Mongoose](https://mongoosejs.com/) - Mongoose
 - [NextAuth](https://next-auth.js.org/) - NextAuth
 
