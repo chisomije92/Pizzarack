@@ -21,6 +21,11 @@ const Menu = ({ pizzaList }) => {
 export const getServerSideProps = async () => {
   await dbConnect();
   const data = await Product.find();
+  if (!data || data.length === 0) {
+    return {
+      notFound: true,
+    };
+  }
 
   return {
     props: {
