@@ -29,6 +29,28 @@
   background-color: crimson;
 }
 
+.btn-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-logout {
+  background-color: rgb(49, 24, 24);
+  color: white;
+  padding: 9px;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  margin-right: 1rem;
+  scale: 0.8;
+  transition: all 0.5s linear;
+}
+
+.btn-logout:is(:hover, :active) {
+  background-color: rgb(21, 18, 18);
+  color: white;
+  scale: 1;
+}
+
 @media screen and (max-width: 967px) {
   .container {
     flex-direction: column;

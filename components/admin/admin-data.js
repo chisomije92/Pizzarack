@@ -1,6 +1,7 @@
 import classes from "./admin-data.module.css";
 import Image from "next/image";
 import { useState } from "react";
+import { signOut } from "next-auth/react";
 
 const AdminData = ({ orders, products }) => {
   const [pizzaList, setPizzaList] = useState(products);
@@ -52,6 +53,17 @@ const AdminData = ({ orders, products }) => {
   };
   return (
     <>
+      <div className={classes["btn-container"]}>
+        <button
+          onClick={() => {
+            signOut();
+          }}
+          className={classes["btn-logout"]}
+        >
+          Log out
+        </button>
+      </div>
+
       <section className={classes.container}>
         <div></div>
         <div className={classes.item}>
