@@ -27,18 +27,7 @@ const OrderData = () => {
   const noOrders = (
     <p className={classes.noOrders}>You have no pending order</p>
   );
-  // const loading = (
-  //   <div className={classes["lds-roller"]}>
-  //     <div></div>
-  //     <div></div>
-  //     <div></div>
-  //     <div></div>
-  //     <div></div>
-  //     <div></div>
-  //     <div></div>
-  //     <div></div>
-  //   </div>
-  // );
+
   const inputError = <p className={classes.error}>Invalid values</p>;
 
   const tableContent = (
