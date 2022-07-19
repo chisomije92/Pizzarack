@@ -2,7 +2,6 @@ import classes from "./cart-data.module.css";
 import ReactDom from "react-dom";
 import Image from "next/image";
 import { useState } from "react";
-import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
 import Link from "next/link";
 import CartModal from "./cart-modal";
@@ -10,8 +9,6 @@ import CartModal from "./cart-modal";
 const CartData = () => {
   const [showModal, setShowModal] = useState(false);
   const cart = useSelector((state) => state.cart);
-
-  const router = useRouter();
 
   return (
     <div className={classes.container}>
