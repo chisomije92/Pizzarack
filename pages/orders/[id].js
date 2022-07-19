@@ -22,18 +22,10 @@ const OrderPage = ({ order }) => {
 
 export const getServerSideProps = async ({ params }) => {
   const id = params.id;
-  if (!mongoose.Types.ObjectId.isValid(id)) {
-    return {
-      redirect: {
-        destination: "/500",
-        permanent: false,
-      },
-    };
-  }
 
   await dbConnect();
   const data = await Order.findById(id);
-  if (!data) {
+  if (!data || data.length === 0 || !mongoose.Types.ObjectId.isValid(id)) {
     return {
       notFound: true,
     };
