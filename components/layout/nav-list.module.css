@@ -6,6 +6,10 @@
   cursor: pointer;
 }
 
+.listItem:is(:active, :hover) {
+  color: #ffc107;
+}
+
 @media screen and (max-width: 899px) {
   .listItem {
     margin: 0 12px;
