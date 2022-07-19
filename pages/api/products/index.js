@@ -2,8 +2,8 @@ import dbConnect from "../../../lib/mongo";
 import Product from "../../../models/Product";
 import { getSession } from "next-auth/react";
 const handler = async (req, res) => {
-  const { method, cookies } = req;
-  const token = cookies.token;
+  const { method } = req;
+
   await dbConnect();
   if (method === "GET") {
     try {
@@ -25,7 +25,6 @@ const handler = async (req, res) => {
     try {
       const product = await Product.create(req.body);
       res.status(201).json(product);
-      res.end();
     } catch (err) {
       res.status(500).json(err);
     }

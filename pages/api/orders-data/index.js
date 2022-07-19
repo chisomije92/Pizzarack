@@ -5,7 +5,7 @@ const handler = async (req, res) => {
   const { method } = req;
   const { email } = req.body;
 
-  const db = await dbConnect();
+  dbConnect();
 
   if (method === "POST") {
     const order = await Order.find({ email: email })
