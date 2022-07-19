@@ -3,9 +3,8 @@ import Image from "next/image";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { cartActions } from "../../store/cartSlice";
-import { useSelector } from "react-redux";
+
 const ProductItem = ({ pizza }) => {
-  const cart = useSelector((state) => state.cart);
   const [price, setPrice] = useState(pizza.prices[0]);
   const [size, setSize] = useState(0);
   const [quantity, setQuantity] = useState(1);

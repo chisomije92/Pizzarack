@@ -5,7 +5,6 @@ export const handler = async (req, res) => {
   const {
     method,
     query: { id },
-    cookies,
   } = req;
   await dbConnect();
   if (method === "GET") {
