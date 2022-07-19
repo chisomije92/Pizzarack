@@ -38,6 +38,12 @@ export const getServerSideProps = async (ctx) => {
   const productsData = await Product.find();
   const ordersData = await Order.find();
 
+  if (!productsData || !ordersData) {
+    return {
+      notFound: true,
+    };
+  }
+
   return {
     props: {
       products: JSON.parse(JSON.stringify(productsData)),
