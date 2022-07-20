@@ -46,7 +46,7 @@ const Add = ({ setClose }) => {
         img: url,
       };
 
-      const response = await fetch("/api/products", {
+      await fetch("/api/products", {
         method: "POST",
         body: JSON.stringify(newProduct),
         headers: {
