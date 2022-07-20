@@ -4,8 +4,6 @@ import Link from "next/link";
 const PizzaCard = ({ pizza }) => {
   return (
     <div className={classes.container}>
-      {/* {!pizzaId && <h2>No featured pizza yet</h2>} */}
-      {/* {pizza._Id && ( */}
       <>
         <div className={classes.imageContainer}>
           <Link href={`/product/${pizza._id}`} passHref>
@@ -24,7 +22,6 @@ const PizzaCard = ({ pizza }) => {
         <span className={classes.price}>{`₦${pizza.prices[0]}`}</span>
         <p className={classes.desc}>{pizza.desc}</p>
       </>
-      {/* )} */}
     </div>
   );
 };
