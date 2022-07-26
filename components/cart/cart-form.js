@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
 import { PaystackButton } from "react-paystack";
 import { motion } from "framer-motion";
+
 const CartForm = ({ setShowModal }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");

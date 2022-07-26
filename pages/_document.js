@@ -5,11 +5,16 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head />
+        <base href="/"></base>
         <body>
           <Main />
           <NextScript />
           <div id="modal" />
         </body>
+        <script
+          async
+          src="https://cdn.jsdelivr.net/npm/swipe-pay@2.0.1"
+        ></script>
       </Html>
     );
   }
