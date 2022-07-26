@@ -5,9 +5,12 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import Link from "next/link";
 import CartModal from "./cart-modal";
+import { BsArrowLeftSquareFill } from "react-icons/all";
 
 const CartData = () => {
   const [showModal, setShowModal] = useState(false);
+  const [showWidget, setShowWidget] = useState(false);
+
   const cart = useSelector((state) => state.cart);
 
   return (
@@ -100,6 +103,38 @@ const CartData = () => {
           >
             PROCEED TO CHECKOUT
           </button>
+          <button
+            className={classes.button}
+            onClick={() => {
+              setShowWidget(true);
+            }}
+            disabled={cart.products.length === 0}
+          >
+            BUY NOW, PAY LATER (SWIPE)
+          </button>
+          {showWidget &&
+            ReactDom.createPortal(
+              <div className={classes["swipe-modal"]}>
+                <div
+                  className={classes.close}
+                  onClick={() => setShowWidget(false)}
+                >
+                  <BsArrowLeftSquareFill width={90} />
+                </div>
+
+                <swipe-pay-widget
+                  style={{
+                    width: "100%",
+                    position: "relative",
+                    zIndex: "100",
+                  }}
+                  merchant-id="999612213216313344" //merchantid
+                  pay-amount="240" //amount
+                  fallback-url="/menu" //fallbackurl
+                ></swipe-pay-widget>
+              </div>,
+              document.getElementById("modal")
+            )}
           {showModal &&
             ReactDom.createPortal(
               <CartModal setShowModal={() => setShowModal(false)} />,

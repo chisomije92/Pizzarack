@@ -1,6 +1,6 @@
 import CartForm from "./cart-form";
 import classes from "./cart-form.module.css";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 const CartModal = ({ setShowModal }) => {
   const animateFrom = { opacity: 0, y: -40 };
