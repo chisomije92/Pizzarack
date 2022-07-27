@@ -102,7 +102,7 @@ const CartData = () => {
           >
             PROCEED TO CHECKOUT
           </button>
-          {/* <button
+          <button
             className={classes.button}
             onClick={() => {
               setShowWidget(true);
@@ -131,7 +131,7 @@ const CartData = () => {
                 </div>
               </div>,
               document.getElementById("modal")
-            )} */}
+            )}
           {showModal &&
             ReactDom.createPortal(
               <CartModal setShowModal={() => setShowModal(false)} />,
