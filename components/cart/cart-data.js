@@ -110,7 +110,7 @@ const CartData = () => {
             }}
             disabled={cart.products.length === 0}
           >
-            BUY NOW, PAY LATER (SWIPE)
+            BUY NOW, PAY LATER (swipePay)
           </button>
           {showWidget &&
             ReactDom.createPortal(
