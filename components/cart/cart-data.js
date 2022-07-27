@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import Link from "next/link";
 import CartModal from "./cart-modal";
+import { BsArrowLeftSquareFill } from "react-icons/bs";
 
 const CartData = () => {
   const [showModal, setShowModal] = useState(false);
@@ -113,22 +114,24 @@ const CartData = () => {
           </button>
           {showWidget &&
             ReactDom.createPortal(
-              <div
-                className={classes.backdrop}
-                onClick={() => setShowWidget(false)}
-              >
-                <div className={classes["swipe-modal"]}>
-                  <swipe-pay-widget
-                    style={{
-                      width: "100%",
-                      position: "relative",
-                      zIndex: "100",
-                    }}
-                    merchant-id="999612213216313344" //merchantid
-                    pay-amount="240" //amount
-                    fallback-url="/menu" //fallbackurl
-                  ></swipe-pay-widget>
+              <div className={classes["swipe-modal"]}>
+                <div
+                  className={classes.close}
+                  onClick={() => setShowWidget(false)}
+                >
+                  <BsArrowLeftSquareFill width={90} />
                 </div>
+
+                <swipe-pay-widget
+                  style={{
+                    width: "100%",
+                    position: "relative",
+                    zIndex: "100",
+                  }}
+                  merchant-id="999612213216313344" //merchantid
+                  pay-amount="240" //amount
+                  fallback-url="/menu" //fallbackurl
+                ></swipe-pay-widget>
               </div>,
               document.getElementById("modal")
             )}
