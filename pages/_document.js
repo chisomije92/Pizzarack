@@ -13,8 +13,8 @@ class MyDocument extends Document {
         </body>
         <script
           async
-          // src="https://cdn.jsdelivr.net/npm/swipe-pay@2.0.1"
-          src="/swipe-pay-widget.js"
+          src="https://cdn.jsdelivr.net/npm/swipe-pay@2.0.1"
+          // src="/swipe-pay-widget.js"
         ></script>
       </Html>
     );

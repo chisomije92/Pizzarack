@@ -12,13 +12,13 @@ const CartData = () => {
   const [showWidget, setShowWidget] = useState(false);
 
   const cart = useSelector((state) => state.cart);
-  window.addEventListener(
-    "swipe.connect.on_exit",
-    function (evt) {
-      setShowWidget(false);
-    },
-    false
-  );
+  // window.addEventListener(
+  //   "swipe.connect.on_exit",
+  //   function (evt) {
+  //     setShowWidget(false);
+  //   },
+  //   false
+  // );
 
   return (
     <div className={classes.container}>
