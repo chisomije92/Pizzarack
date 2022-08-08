@@ -37,3 +37,31 @@ export const getServerSideProps = async ({ params }) => {
     },
   };
 };
+
+// export const getStaticProps = async ({ params }) => {
+//   const id = params.id;
+//   await dbConnect();
+//   const data = await Product.findById(id);
+//   if (!data || data.length === 0 || !mongoose.Types.ObjectId.isValid(id)) {
+//     return {
+//       notFound: true,
+//     };
+//   }
+//   return {
+//     props: {
+//       pizza: JSON.parse(JSON.stringify(data)),
+//     },
+//   };
+// };
+
+// export const getStaticPaths = async () => {
+//   await dbConnect();
+//   const data = await Product.find();
+//   const paths = data.map((item) => ({
+//     params: { id: item.id },
+//   }));
+//   return {
+//     paths,
+//     fallback: false,
+//   };
+// };

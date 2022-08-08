@@ -7,22 +7,34 @@ import PizzaList from "../components/pizza-list";
 import { useEffect, useMemo, useState } from "react";
 
 export default function Home({ pizzaList }) {
-  const [pizzaArr, setPizzaArr] = useState([]);
-  const pizzaArray = useMemo(
+  const [featuredPizza, setFeaturedPizza] = useState([]);
+  const featuredPizzArr = useMemo(
     () => [pizzaList[0], pizzaList[1], pizzaList[2]],
     [pizzaList]
   );
 
+  const randomizedPizzas = useMemo(() => {
+    const randomizedPizzas = [...pizzaList];
+    for (let i = randomizedPizzas.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [randomizedPizzas[i], randomizedPizzas[j]] = [
+        randomizedPizzas[j],
+        randomizedPizzas[i],
+      ];
+    }
+    return [randomizedPizzas[0], randomizedPizzas[1], randomizedPizzas[2]];
+  }, [pizzaList]);
+  // console.log(randomizedPizzas);
   useEffect(() => {
-    pizzaArray.forEach((item, index, arr) => {
-      if (!item) {
-        pizzaArray.splice(index, 1);
-        setPizzaArr(arr);
-      }
-    });
+    // featuredPizzArr.forEach((item, index, arr) => {
+    //   if (!item) {
+    //     featuredPizza.splice(index, 1);
+    //     setFeaturedPizza(arr);
+    //   }
+    // });
 
-    setPizzaArr(pizzaArray);
-  }, [pizzaArr, pizzaList, pizzaArray]);
+    setFeaturedPizza(randomizedPizzas);
+  }, [featuredPizza, pizzaList, featuredPizzArr, randomizedPizzas]);
 
   return (
     <div>
@@ -36,12 +48,29 @@ export default function Home({ pizzaList }) {
       </Head>
       <Featured />
 
-      <PizzaList pizzaList={pizzaArr} />
+      <PizzaList pizzaList={featuredPizza} />
     </div>
   );
 }
 
-export const getServerSideProps = async () => {
+// export const getServerSideProps = async ({ res }) => {
+//   res.setHeader("Cache-Control", "public, max-age=31536000, immutable");
+//   await dbConnect();
+//   const data = await Product.find();
+//   if (!data) {
+//     return {
+//       notFound: true,
+//     };
+//   }
+
+//   return {
+//     props: {
+//       pizzaList: JSON.parse(JSON.stringify(data)),
+//     },
+//   };
+// };
+
+export const getStaticProps = async () => {
   await dbConnect();
   const data = await Product.find();
   if (!data) {
@@ -54,5 +83,6 @@ export const getServerSideProps = async () => {
     props: {
       pizzaList: JSON.parse(JSON.stringify(data)),
     },
+    revalidate: 5000,
   };
 };
