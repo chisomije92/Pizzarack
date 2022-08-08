@@ -8,9 +8,9 @@ const handler = async (req, res) => {
   dbConnect();
 
   if (method === "POST") {
-    const order = await Order.find({ email: email })
-      .clone()
-      .catch((err) => console.log(err));
+    const order = await Order.find({ email: email }).catch((err) =>
+      console.log(err)
+    );
 
     res.status(201).json(order);
   }
