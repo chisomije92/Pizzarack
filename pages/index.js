@@ -13,28 +13,16 @@ export default function Home({ pizzaList }) {
     [pizzaList]
   );
 
-  const randomizedPizzas = useMemo(() => {
-    const randomizedPizzas = [...pizzaList];
-    for (let i = randomizedPizzas.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [randomizedPizzas[i], randomizedPizzas[j]] = [
-        randomizedPizzas[j],
-        randomizedPizzas[i],
-      ];
-    }
-    return [randomizedPizzas[0], randomizedPizzas[1], randomizedPizzas[2]];
-  }, [pizzaList]);
-  // console.log(randomizedPizzas);
   useEffect(() => {
-    // featuredPizzArr.forEach((item, index, arr) => {
-    //   if (!item) {
-    //     featuredPizza.splice(index, 1);
-    //     setFeaturedPizza(arr);
-    //   }
-    // });
+    featuredPizzArr.forEach((item, index, arr) => {
+      if (!item) {
+        featuredPizza.splice(index, 1);
+        setFeaturedPizza(arr);
+      }
+    });
 
-    setFeaturedPizza(randomizedPizzas);
-  }, [featuredPizza, pizzaList, featuredPizzArr, randomizedPizzas]);
+    setFeaturedPizza(featuredPizzArr);
+  }, [featuredPizza, pizzaList, featuredPizzArr]);
 
   return (
     <div>
