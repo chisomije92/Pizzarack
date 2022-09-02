@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
 				<Layout>
 					<Head>
 						<title>Pizza Rack Pizzas</title>
-						<link rel="icon" href="/favicon.ico" />
+						<link rel="icon" href="/pizza-slice.svg" />
 					</Head>
 					<Component {...pageProps} />
 				</Layout>{" "}
